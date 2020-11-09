@@ -1,11 +1,12 @@
-*{
+* {
     box-sizing: border-box;
+    
 }
 
 /**************** crousel banner part ****************/
-.carousel-banner {
-    box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.75);
 
+.carousel-banner {
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
 }
 
 .banner_part {
@@ -18,7 +19,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-
 }
 
 .banner_part-img-2 {
@@ -44,6 +44,7 @@
     background-size: cover;
     background-position: bottom;
 }
+
 
 /**************** carousel banner text ****************/
 
@@ -80,75 +81,129 @@
 }
 
 
+/**************** Resultados da rodada ****************/
+.resultados-rodada-titulo p{
+margin-top: 15px;
+margin-left: 8px;
+font-size: 12px;
+}
+.resultados-rodada-titulo h6{
+text-align: center;
+font-size: 14px;
 
-
-
-/**************** Ultimos resultados ****************/
-.resultados-banner{
+}
+.resultados-rodada-titulo span{
+font-size: 18px;
+color: red;
+}
+.resultados-banner {
     margin-top: 20px;
-    padding-top:20px ;
+    padding-top: 20px;
     padding-bottom: 20px;
     color: blueviolet;
-   
+    
 }
-   .resultados-banner span {
+.linha-horizontal{
+     width: 250px; 
+     size: 20;
+}
 
+.resultados-banner span {
     font-size: 20px;
-   }
-   .text-VS {
+}
+
+.text-VS {
     margin-top: 5px;
     margin-left: 25%;
+}
+
+.linha-vertical {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 130px;
+    border-left: 1px solid rgb(174, 228, 230);
+}
+
+
+
+
+/**************** Ultimas Noticias ****************/
+
+.ultimas-noticias-titulo{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+@media (max-width: 280px) {
+    .text-VS {
+        margin-top: 5px;
+        margin-left: 25%;
+    }
+    .resultados-banner span {
+        margin-left: 25%;
+    }
+}
+
+@media (max-width: 375px) {
+    .text-VS {
+        margin-top: 5px;
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 768px) {
+    .resultados-rodada-titulo p {
+        margin-top: 15px;
+        margin-left: 8px;
+        font-size: 18px;
+    }
+    .resultados-rodada-titulo h6 {
+        text-align: center;
+        font-size: 20px;
+
     }
 
+    .resultados-rodada-titulo span {
+        font-size: 26px;
+        color: red;
+    }
 
- .linha-vertical {
-   margin-top: 20px;
-   margin-left: 10px;
-   margin-right: 10px;
-   height: 130px;
-   border-left: 1px solid rgb(174, 228, 230);
-}            
- @media (max-width: 280px) {
-.text-VS {
- margin-top: 5px;
- margin-left: 25%;
-}
-.resultados-banner span {
- margin-left: 25%;
- }              
-}
-@media (max-width: 375px){
- .text-VS {
-  margin-top: 5px;
-  margin-left: 25%;
- }
-}
-  @media  (min-width: 768px)  {
-      .resultados-banner p {
-          font-size: 16px;
-          color: #FF5B5B;
-          /* margin-left: 20px; */
-      }
-      .resultados-banner  span {
-          font-size:20px ;
-      }
-         .linha-vertical {
-             margin-top: 20px;
-             height: 130px;
-             border-left: 2px solid rgb(174, 228, 230);
-         }
-         .resultados-banner p {
-             margin-left: 10px;
-           
-         }
-         .resultados-banner span {
-            padding-left: 5px;
-         }
-         .text-VS {
-             margin-top: 5px;
-             margin-left: 25%;
-         }
+    .linha-horizontal {
+        width: 350px;
+        size: 20;
+    }
+    .resultados-banner p {
+        font-size: 16px;
+        color: #FF5B5B;
+        margin-left: 10px;
+        margin-left: 20px;
+    }
+    .resultados-banner span {
+        font-size: 20px;
+         padding-left: 5px;
+    }
 
-         
-  }
+    .linha-vertical {
+        margin-top: 20px;
+        height: 130px;
+        border-left: 2px solid rgb(174, 228, 230);
+    }
+    .text-VS {
+        margin-top: 5px;
+        margin-left: 25%;
+    }
+    .ultimas-noticias-titulo {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 22px;
+    }
+}
+
+
+.page-footer{
+    background-color: rgb(65, 64, 64);
+    color: white;
+}
 
