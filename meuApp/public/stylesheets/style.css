@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-/**************** banner part ****************/
+/**************** crousel banner part ****************/
 .carousel-banner {
     box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.75);
 
@@ -45,7 +45,7 @@
     background-position: bottom;
 }
 
-/**************** banner text ****************/
+/**************** carousel banner text ****************/
 
 .banner_part .banner_text {
     display: table;
@@ -83,5 +83,72 @@
 
 
 
-/* =========================================================================================================== */
+/**************** Ultimos resultados ****************/
+.resultados-banner{
+    margin-top: 20px;
+    padding-top:20px ;
+    padding-bottom: 20px;
+    color: blueviolet;
+   
+}
+   .resultados-banner span {
+
+    font-size: 20px;
+   }
+   .text-VS {
+    margin-top: 5px;
+    margin-left: 25%;
+    }
+
+
+ .linha-vertical {
+   margin-top: 20px;
+   margin-left: 10px;
+   margin-right: 10px;
+   height: 130px;
+   border-left: 1px solid rgb(174, 228, 230);
+}            
+ @media (max-width: 280px) {
+.text-VS {
+ margin-top: 5px;
+ margin-left: 25%;
+}
+.resultados-banner span {
+ margin-left: 25%;
+ }              
+}
+@media (max-width: 375px){
+ .text-VS {
+  margin-top: 5px;
+  margin-left: 25%;
+ }
+}
+  @media  (min-width: 768px)  {
+      .resultados-banner p {
+          font-size: 16px;
+          color: #FF5B5B;
+          /* margin-left: 20px; */
+      }
+      .resultados-banner  span {
+          font-size:20px ;
+      }
+         .linha-vertical {
+             margin-top: 20px;
+             height: 130px;
+             border-left: 2px solid rgb(174, 228, 230);
+         }
+         .resultados-banner p {
+             margin-left: 10px;
+           
+         }
+         .resultados-banner span {
+            padding-left: 5px;
+         }
+         .text-VS {
+             margin-top: 5px;
+             margin-left: 25%;
+         }
+
+         
+  }
 
