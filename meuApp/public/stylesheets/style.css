@@ -1,12 +1,37 @@
 * {
     box-sizing: border-box;
-    
+    scroll-behavior: smooth;
 }
+
+/**************** Nav ****************/
+
+
+
+.navbar-custom {
+    background-color: rgb(7, 7, 7); 
+
+}
+.navbar-custom ul li a  {
+    color: aliceblue;
+}
+.navbar-custom  button {
+    color: white;
+}
+
+@media only screen and (min-width: 1024px){
+    .button-time{
+        margin-top: -5px;
+    }
+}
+
+
 
 /**************** crousel banner part ****************/
 
 .carousel-banner {
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid white;
+    border-top:1px solid white;
+    
 }
 
 .banner_part {
@@ -61,18 +86,18 @@
     vertical-align: middle;
 }
 
-.banner_part .banner_text h5 {
+.banner_part .banner_text h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
+    font-size: 22px;
     text-transform: capitalize;
     font-weight: 400;
     color: #FF5B5B;
     line-height: 15px;
 }
 
-.banner_part .banner_text h1 {
+.banner_part .banner_text p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
+    font-size: 18px;
     line-height: 2px;
     text-transform: capitalize;
     font-weight: 400;
@@ -81,16 +106,43 @@
 }
 
 
+
+
+/**************** Titulo-section****************/
+.titulo-section {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+ .linha-horizontal {
+    width: 250px;
+    size: 20;
+    background-color:white;
+}   
+
+
+
+
+
+
 /**************** Resultados da rodada ****************/
+.resultados{
+       background: linear-gradient(to bottom, #000000, #434343);
+         color: white;
+}
 .resultados-rodada-titulo p{
-margin-top: 15px;
+padding-top: 20px ;
 margin-left: 8px;
 font-size: 12px;
 }
 .resultados-rodada-titulo h6{
 text-align: center;
 font-size: 14px;
-
+}
+.resultados img{
+    width: 45px;
+    border-radius: 10px;
+    
 }
 .resultados-rodada-titulo span{
 font-size: 18px;
@@ -100,16 +152,14 @@ color: red;
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    color: blueviolet;
+    color: aliceblue;
     
 }
-.linha-horizontal{
-     width: 250px; 
-     size: 20;
-}
+
 
 .resultados-banner span {
     font-size: 20px;
+    color: gold;
 }
 
 .text-VS {
@@ -122,19 +172,10 @@ color: red;
     margin-left: 10px;
     margin-right: 10px;
     height: 130px;
-    border-left: 1px solid rgb(174, 228, 230);
+    border-left: 1px solid rgb(219, 221, 221);
+    
 }
 
-
-
-
-/**************** Ultimas Noticias ****************/
-
-.ultimas-noticias-titulo{
-    margin-top: 20px;
-    text-align: center;
-    font-size: 20px;
-}
 
 @media (max-width: 280px) {
     .text-VS {
@@ -153,9 +194,11 @@ color: red;
     }
 }
 
+
+
 @media (min-width: 768px) {
     .resultados-rodada-titulo p {
-        margin-top: 15px;
+        padding-top:30px;
         margin-left: 8px;
         font-size: 18px;
     }
@@ -170,13 +213,14 @@ color: red;
         color: red;
     }
 
-    .linha-horizontal {
+     .linha-horizontal {
         width: 350px;
         size: 20;
+        background-color: white;
     }
     .resultados-banner p {
         font-size: 16px;
-        color: #FF5B5B;
+        color: white;
         margin-left: 10px;
         margin-left: 20px;
     }
@@ -194,7 +238,7 @@ color: red;
         margin-top: 5px;
         margin-left: 25%;
     }
-    .ultimas-noticias-titulo {
+    .titulo-section {
         margin-top: 30px;
         text-align: center;
         font-size: 22px;
@@ -202,8 +246,335 @@ color: red;
 }
 
 
+
+/* **************** Tabela de jogos ****************  */
+
+.section-jogos {
+    padding: 2.5em 0;
+}
+
+@media (min-width: 768px) {
+    .section-jogos {
+        padding: 2em 0;
+          
+    }
+}
+
+.section-jogos.section-jogos-sm {
+    padding: 4em 0;
+}
+
+.section-jogos-heading {
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+    position: relative;
+    font-size: 30px;
+}
+
+.proximo-jogo-lider {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-vs {
+    width: 100%;
+}
+
+.widget-vs img {
+    max-width: 130px;
+}
+
+@media (min-width: 280px) and (max-width:375px){
+    .widget-vs img {
+        max-width: 90px;
+    }
+    
+}
+
+.widget-vs h3 {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.widget-vs .vs>span {
+    display: inline-block;
+    font-size: 12px;
+    background: #ee1e46;
+    padding: 5px 20px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.widget-vs-contents {
+    padding-bottom: 0px;
+}
+
+.widget-vs-contents h4 {
+    color: #ee1e46;
+    font-size: 16px;
+    font-weight: 700;
+}
+.widget-title {
+    padding: 16px 20px;
+    color: #fff;
+    background-color: #ee1e46;
+}
+
+.widget-title h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+}
+.widget-body {
+    padding: 20px;
+    
+}
+
+  .team-vs .team-1,
+  .team-vs .team-2 {
+      padding: 30px;
+  }
+
+  .team-vs .team-1,
+  .team-vs .team-2 {
+      padding: 30px;
+  }
+
+  .team-vs .team-2 {
+      position: relative;
+  }
+
+  .team-vs .team-2:before {
+      position: absolute;
+      background: #f6d743;
+      background: #ee1e46;
+      content: "";
+      left: -12%;
+      right: 0;
+      top: 0;
+      width: 200%;
+      height: 200%;
+      -webkit-transform: skew(-15deg);
+      -ms-transform: skew(-15deg);
+      transform: skew(-15deg);
+  }
+  #date-countdown2 {
+      margin-bottom: 20px;
+  }
+
+  #date-countdown2 .countdown-block {
+      display: inline-block;
+      font-size: 12px;
+      border-radius: 7px;
+      color: #fff;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 80px;
+      margin-right: 8px;
+      text-align: center;
+  }
+
+  #date-countdown2 .countdown-block .label {
+      line-height: 1.2;
+      font-size: 1rem;
+      display: block;
+  }
+
+  .custom-table {
+      margin-bottom: 0;
+  }
+
+  .custom-table thead tr th {
+      background: #ee1e46;
+      color: #fff;
+      border: none;
+  }
+
+  .custom-table tbody tr td {
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .custom-table tbody tr td strong {
+      font-weight: 700;
+      color: #0a0909;
+  }
+
+  .custom-table tbody tr:last-child td {
+      border: none;
+  }
+  .text-white-opacity-05 {
+      color: rgba(255, 255, 255, 0.5);
+  }
+
+@media (min-Width:280px){
+    .custom-table {
+        margin-bottom: 0;
+    }
+ @media(max-width:280px) {
+
+     .n-empates {
+         display: none;
+     }
+ }
+
+    .custom-table thead tr th {
+        background: #ee1e46;
+        color: #fff;
+        border: none;
+        
+    }
+
+    .custom-table tbody tr td {
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .custom-table tbody tr td strong {
+        font-weight: 700;
+    }
+
+    .custom-table tbody tr:last-child td {
+        border: none;
+    }
+
+    .text-white-opacity-05 {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+}
+
+
+
+
+
+
+
+
+/* **************** Sobre-nós ****************  */
+
+
+/* Blocks */
+.site-blocks-cover {
+    background-image: url("/images/hero_bg_3.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-bottom: 30px;
+}
+
+
+.site-blocks-cover.overlay {
+    position: relative;
+}
+
+.site-blocks-cover.overlay:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.site-blocks-cover,
+.site-blocks-cover .row {
+    min-height: 600px;
+    height: calc(100vh - 174px);
+}
+
+.site-blocks-cover h1 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.custom-about_us-img{
+    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+
+@media (min-width: 768px) {
+    .site-blocks-cover h1 {
+        font-size: 50px;
+    }
+}
+
+.site-blocks-cover p {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.site-blocks-cover .intro-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
 .page-footer{
     background-color: rgb(65, 64, 64);
     color: white;
+}
+
+
+
+/* **************** Contato ****************  */
+
+.site-section {
+    padding: 2.5em 0;
+}
+
+@media (min-width: 768px) {
+    .site-section {
+        padding: 5em 0;
+    }
+}
+
+.site-section.site-section-sm {
+    padding: 4em 0;
+}
+
+.title-contact{
+   font-size: 30px;
+   font-weight: 700;
+   color: rgb(29, 27, 27);
+   line-height: 1.5;
+   text-align: center;
+   padding-top: 10px;
+   margin-bottom: 0; 
+}
+
+@media (min-width: 768px) {
+    .title-contact h1 {
+        font-size: 50px;
+    }
+}
+
+.form-control {
+    height: 43px;
+}
+
+.form-control:hover,
+.form-control:active,
+.form-control:focus {
+    border-color: #f23a2e;
+}
+
+
+.form-control:active,
+.form-control:focus {
+    -webkit-box-shadow: -1px 0px 2px 0px  rgba(245, 5, 5, 0.884)
+     !important;
+    box-shadow: -1px 0px 2px 0px rgba(245, 5, 5, 0.884)
+     !important;
+    
 }
 

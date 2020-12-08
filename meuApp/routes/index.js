@@ -6,9 +6,10 @@ var HomeController = require("../controllers/HomeController");
 
 
 
+
 router.get("/contato", ContatoController.index);
-router.get("/home", HomeController.index);
 router.get("/", HomeController.index);
+
 
 module.exports = router;
 
