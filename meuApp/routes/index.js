@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var ContatoController = require("../controllers/ContatoController");
+var AtletasController = require("../controllers/AtletasController");
 var HomeController = require("../controllers/HomeController");
 
 
 
 
 
-router.get("/contato", ContatoController.index);
+router.get("/atletas", AtletasController.index);
 router.get("/", HomeController.index);
 
 

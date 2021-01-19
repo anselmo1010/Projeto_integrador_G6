@@ -9,7 +9,6 @@
 
 .navbar-custom {
     background-color: rgb(7, 7, 7); 
-
 }
 .navbar-custom ul li a  {
     color: aliceblue;
@@ -24,18 +23,25 @@
     }
 }
 
+.logo{
+    background-image: url("/images/LOGO_PROJETO - Copia.jpg");
+    background-size: cover;
+    width: 180px;
+    height: 70px;
+}
+
 
 
 /**************** crousel banner part ****************/
 
 .carousel-banner {
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
     border-top:1px solid white;
     
 }
 
 .banner_part {
-    height: 420px;
+    height: 500px;
     display: flex;
     align-items: center;
     position: relative;
@@ -47,11 +53,11 @@
 }
 
 .banner_part-img-2 {
-    height: 420px;
+    height: 500px;
     display: flex;
     align-items: center;
     position: relative;
-    background-image: url("/images/imag-banner.jpg");
+    background-image: url("/images/about_1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,15 +65,15 @@
 }
 
 .banner_part-img-3 {
-    height: 420px;
+    height: 500px;
     display: flex;
     align-items: center;
     position: relative;
-    background-image: url("/images/imag-banner.jpg");
+    background-image: url("/images/about_2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    /* background-position: bottom; */
 }
 
 
@@ -524,7 +530,9 @@ color: red;
     color: white;
 }
 
-
+.page-footer .list-inline-item .modal-dialog{
+    color: #000000;
+}
 
 /* **************** Contato ****************  */
 
@@ -578,3 +586,63 @@ color: red;
     
 }
 
+
+
+/**************** Atletas-Formulario ****************/
+
+            /**************** Image-Form ****************/
+
+.personal-image {
+    /* text-align: center; */
+    margin-left: 5px;
+}
+
+.personal-image input[type="file"] {
+    display: none;
+}
+
+.personal-figure {
+    position: relative;
+    width: 200px;
+    height: 300px;
+}
+
+.personal-avatar {
+    cursor: pointer;
+    width: inherit;
+    height: inherit;
+    box-sizing: border-box;
+    border-radius: 10%;
+    border: 2px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out .3s;
+}
+
+.personal-avatar:hover {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.personal-figcaption {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    border-radius: 10%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all ease-in-out .3s;
+}
+
+.personal-figcaption:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.personal-figcaption>img {
+    margin-top: 32.5px;
+    width: 50px;
+    height: 50px;
+    margin-left: 40%;
+    margin-top: 40%;
+}
