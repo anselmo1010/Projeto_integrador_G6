@@ -2,223 +2,377 @@
 <%- include('./partials/header.ejs') %>
 
 <body>
-  <main>
-    <div >
-      <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-Dados-pessoais-tab" data-toggle="tab" href="#nav-Dados-pessoais" role="tab"
-            aria-controls="nav-Dados-pessoais" aria-selected="true">Dados pessoais</a>
-          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-            aria-controls="nav-contact" aria-selected="false">Info. técnicas</a>
-        </div>
-      </nav>
-      <div class="tab-content " id="nav-tabContent">
-        <div class="tab-pane fade show active container-fluid mt-4" id="nav-Dados-pessoais" role="tabpanel" aria-labelledby="nav-Dados-pessoais-tab">
-          <form>
+ <main>
+    <!--  ***********container pai inicio**********
+    <div class="container form-row ">
+      
+***********imagem-inicio**********
+          <div class="col-md-sm-4 mb-3">
+            <div class="bg-dark ">
 
-
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <div class="personal-image">
+            </div>
+            <div class="personal-image ">
               <label class="label">
                 <input type="file" />
                 <figure class="personal-figure">
                   <img src="images/hero_bg_3.jpg" class="personal-avatar" alt="avatar">
-                  <figcaption class="personal-figcaption">
-                    <img
-                      src="https://raw.githubusercontent.com/ThiagoLuizNunes/angular-boilerplate/master/src/assets/imgs/camera-white.png">
-                  </figcaption>
                 </figure>
               </label>
             </div>
           </div>
+***********imagem-fim**********
+
+
+ **********nav-inicio**********
+<div class="col-md-8 mb-3"> 
+        ***********Controller-nav-inicio**********
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-Dados-pessoais-tab" data-toggle="tab" href="#nav-Dados-pessoais" role="tab"
+              aria-controls="nav-Dados-pessoais" aria-selected="true">Dados pessoais</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+              aria-controls="nav-contact" aria-selected="false">Info. técnicas</a>
+          </div>
+        </nav>
+        ***********Controller-nav-fim**********
+        <div class="tab-content " id="nav-tabContent">
+
+
+
+          ***********Tabela-Dados_pessoais-inicio**********
+          <div class="tab-pane fade show active mt-4" id="nav-Dados-pessoais" role="tabpanel" aria-labelledby="nav-Dados-pessoais-tab">            
+         
+            <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault01">Nome</label>
+              <input type="text" class="form-control" id="validationDefault01" placeholder="Pedro" value="" required>
+            </div>
+            <div class="col-md-5 mb-3">
+              <label for="validationDefault02">Sobrenome</label>
+              <input type="text" class="form-control" id="validationDefault02" placeholder="Silva" value=""
+                required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="exampleFormControlInput1">Data de nascimento</label>
+              <input type="date" class="form-control" id="date" placeholder="d/m/y" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault01">Altura (cm)</label>
+              <input type="number" class="form-control" id="validationDefault01" placeholder="Inserir o valor em centimetros ex: 1,80 = 180cm " value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault02">Peso</label>
+              <input type="number" class="form-control" id="validationDefault02" placeholder="Ex: 90Kg" value="Otto" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="exampleFormControlInput1">Idade</label>
+              <input type="number" class="form-control" id="date" placeholder="18 anos" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationDefault03">Cidade</label>
+              <input type="text" class="form-control" id="validationDefault03" placeholder="Cidade" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault04">Estado</label>
+              <input type="text" class="form-control" id="validationDefault04" placeholder="Estado" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault05">CEP</label>
+              <input type="text" class="form-control" id="validationDefault05" placeholder="CEP" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 mb-3">
+              <label for="exampleFormControlInput1">Endereço de email</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="phon">Telefone (WhatsApp)</label>
+              <input type="text" class="form-control cel-sp-mask" placeholder="Ex.: (00) 00000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+              <label class="form-check-label" for="invalidCheck2">
+                Concordo com os termos e condições
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        
+          </div>
+          ***********Tabela-Dados_pessoais-fim**********
+
+
+          ***********Tabela-info_tecnicas-inicio**********
+          <div class="tab-pane fade container-fluid" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <p>Marque as posições que você atua. </p>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Goleiro [GK]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck2">
+              <label class="custom-control-label" for="customCheck2">Lateral Esquerdo [LE]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck3">
+              <label class="custom-control-label" for="customCheck3">Lateral Direito [LD]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck4">
+              <label class="custom-control-label" for="customCheck4">Zagueiro [ZG]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck5">
+              <label class="custom-control-label" for="customCheck5">Volante [VOL]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck6">
+              <label class="custom-control-label" for="customCheck6">Meia Central [MC]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck7">
+              <label class="custom-control-label" for="customCheck7">Meia esquerda [ME]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck8">
+              <label class="custom-control-label" for="customCheck8">Meia Direita [MD]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck9">
+              <label class="custom-control-label" for="customCheck9">Ponta Esquerda [PE]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck10">
+              <label class="custom-control-label" for="customCheck10">Ponta Direita [PD]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck11">
+              <label class="custom-control-label" for="customCheck11">Segundo Atacante [SA]</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck12">
+              <label class="custom-control-label" for="customCheck12">Atacante [AT]</label>
+            </div>
+            <div class="custom-control  custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck13">
+              <label class="custom-control-label" for="customCheck13">Centro Avante [CA]</label>
+            </div>
+          </div>
+          ***********Tabela-info_tecnicas-inicio**********
+
         </div>
 
 
+        **********nav-fim**********
+      </div>
 
+ ***********container pai fim**********
+    </div> -->
+<div class="container ">
+  <form action="" method="POST">
 
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="validationDefault01">Nome</label>
-            <input type="text" class="form-control" id="validationDefault01" placeholder="Pedro" value="" required>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row ">
+          <div class="container-img col-12">Imagem
           </div>
-          <div class="col-md-5 mb-3">
-            <label for="validationDefault02">Sobrenome</label>
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Silva" value=""
-              required>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="exampleFormControlInput1">Data de nascimento</label>
-            <input type="date" class="form-control" id="date" placeholder="d/m/y" required>
-          </div>
+          <div class="container-img-info col-12">InformaÇões Adicionais</div>
         </div>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="validationDefault01">Altura (cm)</label>
-            <input type="number" class="form-control" id="validationDefault01" placeholder="Inserir o valor em centimetros ex: 1,80 = 180cm " value="" required>
+      </div>
+      <div class="col-md-8">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+              aria-controls="nav-home" aria-selected="true">Home</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false">Perfil</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+              aria-controls="nav-contact" aria-selected="false">Contato</a>
           </div>
-          <div class="col-md-4 mb-3">
-            <label for="validationDefault02">Peso</label>
-            <input type="number" class="form-control" id="validationDefault02" placeholder="Ex: 90Kg" value="Otto" required>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="exampleFormControlInput1">Idade</label>
-            <input type="number" class="form-control" id="date" placeholder="18 anos" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="validationDefault03">Cidade</label>
-            <input type="text" class="form-control" id="validationDefault03" placeholder="Cidade" required>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault04">Estado</label>
-            <input type="text" class="form-control" id="validationDefault04" placeholder="Estado" required>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationDefault05">CEP</label>
-            <input type="text" class="form-control" id="validationDefault05" placeholder="CEP" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-8 mb-3">
-            <label for="exampleFormControlInput1">Endereço de email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@exemplo.com">
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="phon">Telefone (WhatsApp)</label>
-            <input type="text" class="form-control cel-sp-mask" placeholder="Ex.: (00) 00000-0000">
-          </div>
-        </div>
-
-
-                  <div class="form-row">
-                    <div class="col mb-3">
-                      <p>Marque as posições que você atua. </p>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Goleiro [GK]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck2">
-                        <label class="custom-control-label" for="customCheck2">Lateral Esquerdo [LE]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        <label class="custom-control-label" for="customCheck3">Lateral Direito [LD]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck4">
-                        <label class="custom-control-label" for="customCheck4">Zagueiro [ZG]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck5">
-                        <label class="custom-control-label" for="customCheck5">Volante [VOL]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck6">
-                        <label class="custom-control-label" for="customCheck6">Meia Central [MC]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck7">
-                        <label class="custom-control-label" for="customCheck7">Meia esquerda [ME]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck8">
-                        <label class="custom-control-label" for="customCheck8">Meia Direita [MD]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck9">
-                        <label class="custom-control-label" for="customCheck9">Ponta Esquerda [PE]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck10">
-                        <label class="custom-control-label" for="customCheck10">Ponta Direita [PD]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck11">
-                        <label class="custom-control-label" for="customCheck11">Segundo Atacante [SA]</label>
-                      </div>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck12">
-                        <label class="custom-control-label" for="customCheck12">Atacante [AT]</label>
-                      </div>
-                      <div class="custom-control  custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck13">
-                        <label class="custom-control-label" for="customCheck13">Centro Avante [CA]</label>
-                      </div>
-
-                    </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <table class="table table-bordered">
+              <thead class="thead-dark table-borderless">
+                  <th scope="col-6"></th>
+                  <th scope="col-6">Dados Pessoais</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="validationDefault01">Nome</label></th>
+                    <th class="col-10"><input type="text" class="form-control" id="validationDefault01"
+                        placeholder="Pedro" value="" required></th>
                   </div>
-                
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-            <label class="form-check-label" for="invalidCheck2">
-              Concordo com os termos e condições
-            </label>
+                </tr>
+                <tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="validationDefault02">Sobrenome</label></th>
+                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                        placeholder="Silva" value="" required></th>
+                  </div>
+                </tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="validationDefault03">Nacionalidade</label></th>
+                    <th class="col-10"><input type="text" class="form-control" id="validationDefault03"
+                        placeholder="Brasileiro" value="" required></th>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="exampleFormControlInput4">Data de nascimento</label></th>
+                    <th class="col-10"><input type="date" class="form-control" id="date" placeholder="d/m/y" required>
+                    </th>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="exampleFormControlInput5">E-mail</label></th>
+                    <th class="col-10"> <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="nome@exemplo.com">
+                      <div class="row">
+                    </th>
+                  </div>
+                </tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="exampleFormControlInput6">Telefone (WhatsApp)</label></th>
+                    <th class="col-10"> <input type="text" class="form-control cel-sp-mask"
+                        placeholder="Ex.: (00) 00000-0000">
+                      <div class="row">
+                    </th>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="exampleFormControlInput6">Pé Dominante</label></th>
+                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                        placeholder="(Destro,Canhoto ou Ambidestro)" value="" required></th>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="row">
+                    <th scope="col-2"><label for="exampleFormControlInput7">Posição</label></th>
+                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                        placeholder="Ex: Zagueiro " value="" required></th>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="row">
+                    <th scope="col-2">
+                      <label for="exampleFormControlInput8">Outras posições </label>
+                    </th>
+                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                        placeholder="Ex: Lateral Direito , Volante" value="" required></th>
+                  </div>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-bordered">
+              <thead class="thead-light ">
+                <th scope="col">Titulos conquistados</th>
+              </thead>
+              <tbody>
+                  <tr>
+                  <th scope="row">
+                        <label for="exampleFormControlTextarea1">Descreva suas conquistas</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                          placeholder="Ex : Campeão da copa Martins Neto   Ano: 2018-2019" rows="3"></textarea>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                 
+                  <th scope="col">Peso</th>
+                  <th scope="col">Altura ()</th>
+                  <th scope="col">(IMC) Indice de Massa corporal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+  
+  
           </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Enviar</button>
-      </form>
-        </div>
-        <div class="tab-pane fade container-fluid" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-          <p>Marque as posições que você atua. </p>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Goleiro [GK]</label>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+  
+  
+                      <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Dados Pessoais</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                          </tr>
+                        </tbody>
+                      </table>
+  
+                      <table class="table">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">#</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                          </tr>
+                        </tbody>
+                      </table>
+  
+  
           </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck2">
-            <label class="custom-control-label" for="customCheck2">Lateral Esquerdo [LE]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck3">
-            <label class="custom-control-label" for="customCheck3">Lateral Direito [LD]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck4">
-            <label class="custom-control-label" for="customCheck4">Zagueiro [ZG]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck5">
-            <label class="custom-control-label" for="customCheck5">Volante [VOL]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck6">
-            <label class="custom-control-label" for="customCheck6">Meia Central [MC]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck7">
-            <label class="custom-control-label" for="customCheck7">Meia esquerda [ME]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck8">
-            <label class="custom-control-label" for="customCheck8">Meia Direita [MD]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck9">
-            <label class="custom-control-label" for="customCheck9">Ponta Esquerda [PE]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck10">
-            <label class="custom-control-label" for="customCheck10">Ponta Direita [PD]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck11">
-            <label class="custom-control-label" for="customCheck11">Segundo Atacante [SA]</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck12">
-            <label class="custom-control-label" for="customCheck12">Atacante [AT]</label>
-          </div>
-          <div class="custom-control  custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck13">
-            <label class="custom-control-label" for="customCheck13">Centro Avante [CA]</label>
-          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
         </div>
       </div>
     </div>
+  </form>
+
+</div>
+
+
+
 
     <%- include('./partials/footer.ejs') %>
   </main>
