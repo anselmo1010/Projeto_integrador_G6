@@ -2,7 +2,7 @@
 <%- include('./partials/header.ejs') %>
 
 <body>
- <main>
+  <main>
     <!--  ***********container pai inicio**********
     <div class="container form-row ">
       
@@ -175,201 +175,202 @@
 
  ***********container pai fim**********
     </div> -->
-<div class="container ">
-  <form action="" method="POST">
+    <div class="container ">
+      <form action="" method="POST">
 
-    <div class="row">
-      <div class="col-md-4">
-        <div class="row ">
-          <div class="container-img col-12">Imagem
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row ">
+              <div class="container-img col-12">Imagem
+              </div>
+              <div class="container-img-info col-12">InformaÇões Adicionais</div>
+            </div>
           </div>
-          <div class="container-img-info col-12">InformaÇões Adicionais</div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-              aria-controls="nav-home" aria-selected="true">Home</a>
-            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-              aria-controls="nav-profile" aria-selected="false">Perfil</a>
-            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-              aria-controls="nav-contact" aria-selected="false">Contato</a>
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <table class="table table-bordered">
-              <thead class="thead-dark table-borderless">
-                  <th scope="col-6"></th>
-                  <th scope="col-6">Dados Pessoais</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="validationDefault01">Nome</label></th>
-                    <th class="col-10"><input type="text" class="form-control" id="validationDefault01"
-                        placeholder="Pedro" value="" required></th>
-                  </div>
-                </tr>
-                <tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="validationDefault02">Sobrenome</label></th>
-                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
-                        placeholder="Silva" value="" required></th>
-                  </div>
-                </tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="validationDefault03">Nacionalidade</label></th>
-                    <th class="col-10"><input type="text" class="form-control" id="validationDefault03"
-                        placeholder="Brasileiro" value="" required></th>
-                  </div>
-                </tr>
-                <tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="exampleFormControlInput4">Data de nascimento</label></th>
-                    <th class="col-10"><input type="date" class="form-control" id="date" placeholder="d/m/y" required>
-                    </th>
-                  </div>
-                </tr>
-                <tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="exampleFormControlInput5">E-mail</label></th>
-                    <th class="col-10"> <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="nome@exemplo.com">
+          <div class="col-md-8">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                  aria-controls="nav-home" aria-selected="true">Home</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                  aria-controls="nav-profile" aria-selected="false">Perfil</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                  aria-controls="nav-contact" aria-selected="false">Contato</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <table class="table table-bordered">
+                  <thead class="thead-dark table-borderless">
+                    <th scope="col-6"></th>
+                    <th scope="col-6">Dados Pessoais</th>
+                  </thead>
+                  <tbody>
+                    <tr>
                       <div class="row">
-                    </th>
-                  </div>
-                </tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="exampleFormControlInput6">Telefone (WhatsApp)</label></th>
-                    <th class="col-10"> <input type="text" class="form-control cel-sp-mask"
-                        placeholder="Ex.: (00) 00000-0000">
+                        <th scope="col-2"><label for="validationDefault01">Nome</label></th>
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault01"
+                            placeholder="Pedro" value="" required></th>
+                      </div>
+                    </tr>
+                    <tr>
                       <div class="row">
-                    </th>
-                  </div>
-                </tr>
-                <tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="exampleFormControlInput6">Pé Dominante</label></th>
-                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
-                        placeholder="(Destro,Canhoto ou Ambidestro)" value="" required></th>
-                  </div>
-                </tr>
-                <tr>
-                  <div class="row">
-                    <th scope="col-2"><label for="exampleFormControlInput7">Posição</label></th>
-                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
-                        placeholder="Ex: Zagueiro " value="" required></th>
-                  </div>
-                </tr>
-                <tr>
-                  <div class="row">
-                    <th scope="col-2">
-                      <label for="exampleFormControlInput8">Outras posições </label>
-                    </th>
-                    <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
-                        placeholder="Ex: Lateral Direito , Volante" value="" required></th>
-                  </div>
-                </tr>
-              </tbody>
-            </table>
+                        <th scope="col-2"><label for="validationDefault02">Sobrenome</label></th>
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                            placeholder="Silva" value="" required></th>
+                      </div>
+                    </tr>
+                    <div class="row">
+                      <th scope="col-2"><label for="validationDefault03">Nacionalidade</label></th>
+                      <th class="col-10"><input type="text" class="form-control" id="validationDefault03"
+                          placeholder="Brasileiro" value="" required></th>
+                    </div>
+                    </tr>
+                    <tr>
+                      <div class="row">
+                        <th scope="col-2"><label for="exampleFormControlInput4">Data de nascimento</label></th>
+                        <th class="col-10"><input type="date" class="form-control" id="date" placeholder="d/m/y"
+                            required>
+                        </th>
+                      </div>
+                    </tr>
+                    <tr>
+                      <div class="row">
+                        <th scope="col-2"><label for="exampleFormControlInput5">E-mail</label></th>
+                        <th class="col-10"> <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="nome@exemplo.com">
+                          <div class="row">
+                        </th>
+                      </div>
+                    </tr>
+                    <div class="row">
+                      <th scope="col-2"><label for="exampleFormControlInput6">Telefone (WhatsApp)</label></th>
+                      <th class="col-10"> <input type="text" class="form-control cel-sp-mask"
+                          placeholder="Ex.: (00) 00000-0000">
+                        <div class="row">
+                      </th>
+                    </div>
+                    </tr>
+                    <tr>
+                      <div class="row">
+                        <th scope="col-2"><label for="exampleFormControlInput6">Pé Dominante</label></th>
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                            placeholder="(Destro,Canhoto ou Ambidestro)" value="" required></th>
+                      </div>
+                    </tr>
+                    <tr>
+                      <div class="row">
+                        <th scope="col-2"><label for="exampleFormControlInput7">Posição</label></th>
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                            placeholder="Ex: Zagueiro " value="" required></th>
+                      </div>
+                    </tr>
+                    <tr>
+                      <div class="row">
+                        <th scope="col-2">
+                          <label for="exampleFormControlInput8">Outras posições </label>
+                        </th>
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                            placeholder="Ex: Lateral Direito , Volante" value="" required></th>
+                      </div>
+                    </tr>
+                  </tbody>
+                </table>
 
-            <table class="table table-bordered">
-              <thead class="thead-light ">
-                <th scope="col">Titulos conquistados</th>
-              </thead>
-              <tbody>
-                  <tr>
-                  <th scope="row">
+                <table class="table table-bordered">
+                  <thead class="thead-light ">
+                    <th scope="col">Titulos conquistados</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
                         <label for="exampleFormControlTextarea1">Descreva suas conquistas</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1"
                           placeholder="Ex : Campeão da copa Martins Neto   Ano: 2018-2019" rows="3"></textarea>
-                  </th>
-                </tr>
-              </tbody>
-            </table>
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
 
-            <table class="table">
-              <thead class="thead-light">
-                <tr>
-                 
-                  <th scope="col">Peso</th>
-                  <th scope="col">Altura ()</th>
-                  <th scope="col">(IMC) Indice de Massa corporal</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-  
-  
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+
+                      <th scope="col">Peso</th>
+                      <th scope="col">Altura ()</th>
+                      <th scope="col">(IMC) Indice de Massa corporal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+              </div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Dados Pessoais</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">#</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+              </div>
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+            </div>
           </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-  
-  
-                      <table class="table">
-                        <thead class="thead-dark">
-                          <tr>
-                            <th scope="col">Dados Pessoais</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                          </tr>
-                        </tbody>
-                      </table>
-  
-                      <table class="table">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col">#</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                          </tr>
-                        </tbody>
-                      </table>
-  
-  
-          </div>
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
         </div>
-      </div>
-    </div>
-  </form>
+      </form>
 
-</div>
+    </div>
 
 
 
