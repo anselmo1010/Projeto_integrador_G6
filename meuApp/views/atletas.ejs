@@ -1,10 +1,11 @@
 <%- include('./partials/head.ejs')  %>
-<%- include('./partials/header.ejs') %>
 
 <body>
   <main>
-    <!--  ***********container pai inicio**********
-    <div class="container form-row ">
+    <%- include('./partials/header.ejs') %>
+    <!-- ***********container pai inicio********** -->
+
+    <!-- <div class="container form-row ">
       
 ***********imagem-inicio**********
           <div class="col-md-sm-4 mb-3">
@@ -175,18 +176,29 @@
 
  ***********container pai fim**********
     </div> -->
-    <div class="container ">
+
+
+
+    <div class="container-fluid">
       <form action="" method="POST">
 
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-4">
             <div class="row ">
-              <div class="container-img col-12">Imagem
+              <div class="container-img col-12 ">
+                <!-- <div class="personal-image ">
+                              <label class="label">
+                                <input type="file" />
+                                <figure class="personal-figure">
+                                  <img src="images/hero_bg_3.jpg" class="personal-avatar" alt="avatar">
+                                </figure>
+                              </label>
+                            </div> -->
               </div>
-              <div class="container-img-info col-12">InformaÇões Adicionais</div>
+              <div class="container-img-info col-12 ">InformaÇões Adicionais</div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-sm-8">
             <nav>
               <div class="nav nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
@@ -201,8 +213,8 @@
               <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                 <table class="table table-bordered">
                   <thead class="thead-dark table-borderless">
-                    <th scope="col-6"></th>
-                    <th scope="col-6">Dados Pessoais</th>
+                    <th scope="col-sm-6"></th>
+                    <th scope="col-sm-6">Dados Pessoais</th>
                   </thead>
                   <tbody>
                     <tr>
@@ -236,7 +248,7 @@
                     <tr>
                       <div class="row">
                         <th scope="col-2"><label for="exampleFormControlInput5">E-mail</label></th>
-                        <th class="col-10"> <input type="email" class="form-control" id="exampleFormControlInput1"
+                        <th class="col-10"> <input type="email" class="form-control" id="exampleFormControlInput5"
                             placeholder="nome@exemplo.com">
                           <div class="row">
                         </th>
@@ -252,24 +264,24 @@
                     </tr>
                     <tr>
                       <div class="row">
-                        <th scope="col-2"><label for="exampleFormControlInput6">Pé Dominante</label></th>
-                        <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                        <th scope="col-2"><label for="exampleFormControlInput7">Pé Dominante</label></th>
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault07"
                             placeholder="(Destro,Canhoto ou Ambidestro)" value="" required></th>
                       </div>
                     </tr>
                     <tr>
                       <div class="row">
-                        <th scope="col-2"><label for="exampleFormControlInput7">Posição</label></th>
-                        <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                        <th scope="col-2"><label for="exampleFormControlInput8">Posição</label></th>
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault08"
                             placeholder="Ex: Zagueiro " value="" required></th>
                       </div>
                     </tr>
                     <tr>
                       <div class="row">
                         <th scope="col-2">
-                          <label for="exampleFormControlInput8">Outras posições </label>
+                          <label for="exampleFormControlInput9">Outras posições</label>
                         </th>
-                        <th class="col-10"><input type="text" class="form-control" id="validationDefault02"
+                        <th class="col-10"><input type="text" class="form-control" id="validationDefault09"
                             placeholder="Ex: Lateral Direito , Volante" value="" required></th>
                       </div>
                     </tr>
@@ -291,30 +303,21 @@
                   </tbody>
                 </table>
 
-                <table class="table">
+                <table class="table table-bordered ">
                   <thead class="thead-light">
                     <tr>
-
-                      <th scope="col">Peso</th>
-                      <th scope="col">Altura ()</th>
+                      <th scope="col"><label for="validationDefault10">Peso</label></th>
+                      <th scope="col"><label for="validationDefault11">Altura (cm)</label></th>
                       <th scope="col">(IMC) Indice de Massa corporal</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
+                      <th scope="row"><input type="number" class="form-control" id="validationDefault10"
+                          placeholder="Ex: 90Kg" value="Otto" required></th>
+                      <td><input type="number" class="form-control" id="validationDefault11"
+                          placeholder="Valor em centimetros ex: 1,80 = 180cm " value="" required></td>
+                      <td>Inserir Js. p/calc</td>
                     </tr>
                   </tbody>
                 </table>
@@ -322,45 +325,72 @@
 
               </div>
               <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          Descreva suas qualidades dentro da sua posição
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        Faça um breve resumo dos seu aspectos técnicos:
+                        EX: Atuo como primeiro volante/lateral esquerdo ,bom em passes curtos ,antecipações ,boa
+                        cobertura dos laterais e chute de longa distancia)
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Grupo de itens colapsável #2
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Grupo de itens colapsável #3
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
 
-                <table class="table">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col">Dados Pessoais</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <table class="table">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col">#</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                    </tr>
-                  </tbody>
-                </table>
 
 
               </div>
