@@ -336,6 +336,13 @@ color: red;
     background-color: #ee1e46;
 }
 
+.widget-title-login {
+    padding: 10px 16px;
+    color: #fff;
+    background-color: #ee1e46;
+    border-radius: 5px;
+}
+
 .widget-title h3 {
     margin: 0;
     padding: 0;

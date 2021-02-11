@@ -1,0 +1,38 @@
+<%- include('./partials/head.ejs')  %>
+
+<body>
+    <main>
+        <%- include('./partials/header.ejs') %>
+        <div class="container ">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 mt-5">
+                    <div class="proximo-jogo-lider bg-light ">
+                        <div class="widget-title-login">
+                            <h5>Iniciar Sessão</h5>
+                        </div>
+                        <div class="widget-body mb-3">
+                            <form action="">
+                                <label for="inf-nome">Email:</label>
+                                <input type="email" class="form-control mb-2" id="inf-nome"
+                                    placeholder="exemplo@email.com" value="" required>
+                                <label for="inf-nome">Senha:</label>
+                                <input type="password" class="form-control mb-2" id="inf-nome"
+                                    placeholder="Informe sua senha" value="" required>
+                                <button type="submit" value="upload"
+                                    class="btn mt-3 btn-danger btn-lg btn-block">Entrar</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <%- include('./partials/footer.ejs') %>
+
+    </main>
+
+</body>
+
+</html>
