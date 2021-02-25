@@ -9,6 +9,7 @@ const LoginController = require('../controllers/LoginController');
 
 router.get("/atletas", AtletasController.index);
 router.get("/login", LoginController.index)
+router.post("/login", LoginController.sigin)
 router.get("/", HomeController.index);
 
 

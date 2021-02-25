@@ -1,4 +1,4 @@
-<%- include('./partials/head.ejs')  %>
+<%- include('./partials/head.ejs') %>
 
 <body>
     <main>
@@ -32,7 +32,7 @@
                             <h5>Iniciar Sessão</h5>
                         </div>
                         <div class="widget-body mb-3">
-                            <form action="">
+                            <form action="/login" method="POST">
                                 <label for="inf-nome">Email:</label>
                                 <input type="email" class="form-control mb-2" id="inf-nome"
                                     placeholder="exemplo@email.com" value="" required>
