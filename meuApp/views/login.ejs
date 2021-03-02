@@ -1,4 +1,4 @@
-<%- include('./partials/head.ejs')  %>
+<%- include('./partials/head.ejs') %>
 
 <body>
     <main>
@@ -32,13 +32,13 @@
                             <h5>Iniciar Sessão</h5>
                         </div>
                         <div class="widget-body mb-3">
-                            <form action="">
+                            <form action="/users/login" method="POST">
                                 <label for="inf-nome">Email:</label>
                                 <input type="email" class="form-control mb-2" id="inf-nome"
-                                    placeholder="exemplo@email.com" value="" required>
+                                    placeholder="exemplo@email.com" value="" required name="email"> 
                                 <label for="inf-nome">Senha:</label>
                                 <input type="password" class="form-control mb-2" id="inf-nome"
-                                    placeholder="Informe sua senha" value="" required>
+                                    placeholder="Informe sua senha" value="" required name="password">
                                 <button type="submit" value="upload"
                                     class="btn mt-3 btn-danger btn-lg btn-block">Entrar</button>
                             </form>
