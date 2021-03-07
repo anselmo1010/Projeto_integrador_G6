@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const config = require('../config/database')
-const { Perfil, Recrutador } = require('../models');
+const { Profile, Recrutador } = require('../models');
 const { use } = require('../routes');
 
 const LoginController = {
@@ -15,7 +15,7 @@ const LoginController = {
 
                 let user = null;
 
-                let userProfile = await Perfil.findOne(
+                let userProfile = await Profile.findOne(
                     {
                         where: {
                             email: email,
@@ -28,7 +28,7 @@ const LoginController = {
                     if (userProfile.id_perfil == 1) {
                         let recruiter = await Recrutador.findOne({
                             include: {
-                                model: Perfil,
+                                model: Profile,
                                 as: 'perfil',
                                 required: true,
                             },

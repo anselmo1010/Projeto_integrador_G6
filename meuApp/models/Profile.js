@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataType) => {
-    const Perfil = sequelize.define('Perfil', {
+    const Profile = sequelize.define('Profile', {
         id_perfil:{
             type: DataType.INTEGER,
             primaryKey: true,
@@ -24,5 +24,5 @@ module.exports = (sequelize, DataType) => {
         timestamps: false
     })
 
-    return Perfil;
+    return Profile;
 }
