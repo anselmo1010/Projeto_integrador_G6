@@ -11,7 +11,7 @@ const LoginController = {
             let { email, password } = req.body;
 
             let user = {
-                name: "airton",
+                name: "Airton",
                 email,
                 password
             }
@@ -25,7 +25,7 @@ const LoginController = {
     },
     signOut: (req, res) => {
         req.session.destroy();
-        res.redirect('login');
+        res.redirect('login');  
     }
 }
 
