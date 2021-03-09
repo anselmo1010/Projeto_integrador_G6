@@ -1,7 +1,5 @@
 'use strict';
 
-const { STRING, SequelizeScopeError } = require("sequelize/types");
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
    const Athlete = await queryInterface.createTable('atleta', {
@@ -40,6 +38,14 @@ module.exports = {
       references: {
         model: 'perfil',
         key: 'id_perfil'
+      }
+
+    },
+    fk_clube: {
+      type: Sequelize.INTEGER,
+      references: {
+        model: 'clube',
+        key: 'id_clube'
       }
 
     }

@@ -2,22 +2,18 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    const Club = await queryInterface.createTable('users', {
+    const Club = await queryInterface.createTable('clube', {
       id_clube: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true, allowNull: false },
       nome: Sequelize.STRING(50),
       dt_fundacao: Sequelize.DATE,
-      tecnico: Sequelize.STRING
+      tecnico: Sequelize.STRING,
+      emblema: Sequelize.STRING
     });
 
     return Club;
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable('clube');
   }
 };
