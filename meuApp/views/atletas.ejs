@@ -93,8 +93,28 @@
                     <tr>
                       <div class="row">
                         <th scope="col"><label for="inf-posicao">Posição</label></th>
-                        <th class="col"><input type="text" class="form-control" id="inf-posicao"
-                            placeholder="Ex: Zagueiro " value="" required></th>
+                        <th class="col">
+                           <div class="container mt-3 ">
+                             <input type="radio" id="posicao-goleiro" name="posicao" value="goleiro">
+                             <label for="posicao-goleiro">Goleiro</label><br>
+                             <input type="radio" id="posicao-zagueiro" name="posicao" value="zagueiro">
+                             <label for="posicao-zagueiro">Zagueiro</label><br>
+                             <input type="radio" id="posicao-LateralEsq" name="posicao" value="lateralEsq">
+                             <label for="posicao-LateralEsq">Lateral Esquerdo</label><br>
+                             <input type="radio" id="posicao-LateralDir" name="posicao" value="lateralEsq">
+                             <label for="posicao-LateralDir">Lateral Direito</label><br>
+                             <input type="radio" id="posicao-volante" name="posicao" value="volante">
+                             <label for="posicao-volante">volante</label><br>
+                             <input type="radio" id="posicao-meia" name="posicao" value="meia">
+                             <label for="posicao-meia">Meia</label><br>
+                             <input type="radio" id="posicao-ala" name="posicao" value="ala">
+                             <label for="posicao-ala">Ala</label><br>
+                             <input type="radio" id="posicao-segAtacante" name="posicao" value="segundoAtacante">
+                             <label for="posicao-segAtacante">Segundo Atacante</label><br>
+                             <input type="radio" id="posicao-atacante" name="posicao" value="atacante">
+                             <label for="posicao-atacante">Atacante</label><br>
+                             </div>
+                        </th>
                       </div>
                     </tr>
                     <tr>
@@ -223,7 +243,6 @@
         </div>
       </form>
     </div>
-
     <%- include('./partials/footer.ejs') %>
   </main>
 
