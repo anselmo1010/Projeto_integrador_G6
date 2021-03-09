@@ -1,7 +1,23 @@
-const {News, Contact} = require("../models");
+const {News, Contact, Match} = require("../models");
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const HomeController = {
     index:  async (req, res, next) => {   
+       
+        const matchs = await Match.findAll({
+            where: {
+                fk_resultado: {
+                    [Op.not]: null
+                }
+            },
+            include: 'resultado',
+            //order:['data_partida','DESC'], 
+            limit: 4
+        });
+
+        console.log(matchs);
+        
         const news = await News.findAll();
         console.log(news)    
 
