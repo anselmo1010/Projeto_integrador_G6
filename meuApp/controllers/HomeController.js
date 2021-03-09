@@ -1,5 +1,6 @@
-const {News, Contact, Match} = require("../models");
+const {News, Contact, Match, Result} = require("../models");
 const Sequelize = require('sequelize');
+
 const Op = Sequelize.Op;
 
 const HomeController = {
@@ -11,18 +12,19 @@ const HomeController = {
                     [Op.not]: null
                 }
             },
-            include: 'resultado',
+            include: ['resultado', 'clube_casa', 'clube_visitante'],
             //order:['data_partida','DESC'], 
             limit: 4
         });
 
-        console.log(matchs);
+        //console.log(matchs[0].resultado);
+        
         
         const news = await News.findAll();
         console.log(news)    
 
 
-        return res.render("home", {"news": news});
+        return res.render("home", {"news": news, matchs: matchs});
     },
     saveContact: (req, res) => {
         const {c_fname, c_lname, c_email, c_phone, c_message} = req.body;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <%- include('./partials/head.ejs')  %>
+
 <body>
   <main>
     <%- include('./partials/header.ejs') %>
@@ -58,61 +59,30 @@
       </div>
       <section class="container resultados-banner">
         <div class="row  resultados-block">
+          <% if( matchs.length > 0) {%>
+            
+          <% matchs.forEach( match => { %>
+
+          <div class="linha-vertical"></div>
           <div class="col resultados-block-1">
             <div class="row">
               <img src="/images/escudo-1maio.jpeg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
+              <p><%= match.clube_casa.nome%> <span><%=match.resultado.gols_casa%></span></p>
             </div>
             <div class="text-VS">
               <p>Vs</p>
             </div>
             <div class="row">
               <img src="/images/escudo.ajax.jpg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
+              <p><%= match.clube_visitante.nome %><span><%=match.resultado.gols_visitante%></span></p>
             </div>
           </div>
-          <div class="linha-vertical"></div>
-          <div class="col resultados-block-2">
-            <div class="row">
-              <img src="/images/escudo-1maio.jpeg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
-            </div>
-            <div class="text-VS">
-              <p>Vs</p>
-            </div>
-            <div class="row ">
-              <img src="/images/escudo.ajax.jpg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
-            </div>
-          </div>
-          <div class="linha-vertical"></div>
-          <div class="col resultados-block-3">
-            <div class="row">
-              <img src="/images/escudo-1maio.jpeg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
-            </div>
-            <div class="text-VS">
-              <p>Vs</p>
-            </div>
-            <div class="row">
-              <img src="/images/escudo.ajax.jpg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
-            </div>
-          </div>
-          <div class="linha-vertical"></div>
-          <div class="col resultados-block-4">
-            <div class="row">
-              <img src="/images/escudo-1maio.jpeg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
-            </div>
-            <div class="text-VS">
-              <p>Vs</p>
-            </div>
-            <div class="row">
-              <img src="/images/escudo.ajax.jpg" alt="">
-              <p>Ajax.Fc <span>3</span></p>
-            </div>
-          </div>
+
+          <% }) %>
+          <%}else {%>
+            <p>Ainda não há nenhum resultado para monstrar</p>
+          <%}%>
+          
         </div>
       </section>
     </div>
