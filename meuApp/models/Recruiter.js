@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataType) => {
-    const Recrutador = sequelize.define('Recrutador', {
+    const Recruiter = sequelize.define('Recruiter', {
         id_recrutador:{
             type: DataType.INTEGER,
             primaryKey: true,
@@ -23,12 +23,12 @@ module.exports = (sequelize, DataType) => {
         timestamps: false
     })
 
-    Recrutador.associate = (listaDeModelos) =>{
-        Recrutador.belongsTo(listaDeModelos.Perfil, {
+    Recruiter.associate = (models) =>{
+        Recruiter.belongsTo(models.Profile, {
             foreignKey: 'fk_perfil',
             as:'perfil'
         })
     }
 
-    return Recrutador;
+    return Recruiter;
 }

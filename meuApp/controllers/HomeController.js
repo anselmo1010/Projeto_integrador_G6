@@ -1,8 +1,8 @@
-const {Noticia, Contact} = require("../models");
+const {News, Contact} = require("../models");
 
 const HomeController = {
     index:  async (req, res, next) => {   
-        const news = await Noticia.findAll();
+        const news = await News.findAll();
         console.log(news)    
 
 
