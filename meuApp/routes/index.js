@@ -13,6 +13,7 @@ router.get("/adminobs", AdminObsController.index);
 router.get("/admintable", AdminTableController.index);
 router.get("/atletas", AtletasController.index);
 router.get("/", HomeController.index);
+router.post("/saveContact", HomeController.saveContact);
 
 
 module.exports = router;
