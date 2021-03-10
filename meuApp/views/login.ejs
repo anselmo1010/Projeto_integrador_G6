@@ -14,12 +14,123 @@
                                 <br>
                                 Se você ainda não possui cadastro, nós contamos com dois tipos de acesso. Seja você <a
                                     href="/atletas" class="text-danger">atleta</a> ou seja você <a href=""
-                                    class="text-danger">recrutador</a>.
+                                    class="text-danger" data-toggle="modal"
+                                    data-target="#modalRegiterRecrutador">recrutador</a>.
                             </p>
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalRegiterRecrutador" tabindex="-1" role="dialog"
+                                aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content" id="TituloModalCentralizado">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Fechar">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <section id="register-form">
+                                                <section class="pr-1">
+                                                    <!-- Material form register -->
+                                                    <div class="card">
+                                                        <h5 class="card-header text-white bg-dark text-center py-4">
+                                                            <strong>Recrutador</strong>
+                                                        </h5>
+                                                        <!--Card content-->
+                                                        <div class="card-body px-lg-5 pt-0">
+                                                            <!-- Form -->
+                                                            <form class="text-center mt-3">
+                                                                <div class="form-row">
+                                                                    <div class="col">
+                                                                        <!-- First name -->
+                                                                        <div class="md-form">
+                                                                            <input type="text"
+                                                                                id="materialRegisterFormFirstName"
+                                                                                class="form-control" placeholder="Pep">
+                                                                            <label
+                                                                                for="materialRegisterFormFirstName">Nome
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <!-- Last name -->
+                                                                        <div class="md-form">
+                                                                            <input type="text"
+                                                                                id="materialRegisterFormLastName"
+                                                                                class="form-control"
+                                                                                placeholder="Guardiola">
+                                                                            <label
+                                                                                for="materialRegisterFormLastName">Sobrenome
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Last name -->
+                                                                <div class="form-group mt-3">
+                                                                    <select class="form-control"
+                                                                        id="exampleFormControlSelect1">
+                                                                        <option>Ajax</option>
+                                                                        <option>Catandeiras de Heliópolis</option>
+                                                                        <option>Dragões da Casa Verde</option>
+                                                                        <option>Guarani do jardim Peri</option>
+                                                                        <option>7 de Setembro </option>
+                                                                    </select>
+                                                                    <label for="exampleFormControlSelect1">Clube
+                                                                        representado</label>
+                                                                </div>
+
+                                                                <!-- E-mail -->
+                                                                <div class="md-form mt-0">
+                                                                    <input type="email" id="materialRegisterFormEmail"
+                                                                        class="form-control"
+                                                                        placeholder="meuEmail@email.com">
+                                                                    <label for="materialRegisterFormEmail"
+                                                                        class="active">E-mail</label>
+                                                                </div>
+                                                                <!-- Password -->
+                                                                <div class="md-form">
+                                                                    <input type="password"
+                                                                        id="materialRegisterFormPassword"
+                                                                        class="form-control"
+                                                                        aria-describedby="materialRegisterFormPasswordHelpBlock">
+                                                                    <label for="materialRegisterFormPassword"
+                                                                        class="active">Password</label>
+                                                                    <small id="materialRegisterFormPasswordHelpBlock"
+                                                                        class="form-text text-muted mb-4">
+                                                                        Minimo de 8 (oito)
+                                                                        caracteres .
+                                                                    </small>
+                                                                </div>
+                                                                <!-- Sign up button -->
+                                                                <button
+                                                                    class="btn btn-outline-danger btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                                                    type="submit">Registrar-se</button>
+                                                                <hr>
+                                                                <!-- Terms of service -->
+                                                                <p>Clique em
+                                                                    <em>Registrar-se</em>
+                                                                    caso voce concorde com
+                                                                    <a href="" target="_blank">os
+                                                                        termos de
+                                                                        serviço.
+                                                                    </a>
+
+                                                                </p>
+                                                            </form>
+                                                            <!-- Form -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- Material form register -->
+                                                </section>
+                                                <!--Section: Live preview-->
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <p class="card-text"><small class="text-muted">Junte-se a nós!</small></p>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-lg-2 mt-5">
                     <div class="container d-flex justify-content-center align-items-center p-5">
@@ -35,7 +146,7 @@
                             <form action="/users/login" method="POST">
                                 <label for="inf-nome">Email:</label>
                                 <input type="email" class="form-control mb-2" id="inf-nome"
-                                    placeholder="exemplo@email.com" value="" required name="email"> 
+                                    placeholder="exemplo@email.com" value="" required name="email">
                                 <label for="inf-nome">Senha:</label>
                                 <input type="password" class="form-control mb-2" id="inf-nome"
                                     placeholder="Informe sua senha" value="" required name="password">
@@ -43,19 +154,11 @@
                                     class="btn mt-3 btn-danger btn-lg btn-block">Entrar</button>
                             </form>
                         </div>
-
                     </div>
                 </div>
-
-
-
             </div>
-
         </div>
         <%- include('./partials/footer.ejs') %>
-
     </main>
-
 </body>
-
 </html>
