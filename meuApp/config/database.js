@@ -1,6 +1,6 @@
 const config ={
     username: 'root',
-    password: '1234',
+    password: 'tottii10',
     database: 'varzea_db',
     host:'localhost',
     dialect: 'mysql'
