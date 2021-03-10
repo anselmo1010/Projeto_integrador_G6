@@ -138,20 +138,22 @@
  
 
     <section class="noticias">
+      <div class="container">
       <div class="titulo-section" id="news">
         <p>Ultimas Notícias </p>
         <hr class="linha-horizontal">
       </div>
       <div class="card-columns">
-        <div class="card">
-          <img class="card-img-top" src="/images/imag-banner.jpg" alt="Imagem de capa do card">
-          <div class="card-body">
-            <h5 class="card-title">Título do card que quebra em uma nova linha</h5>
-            <p class="card-text">Este é um card mais longo com suporte a texto embaixo, que funciona como uma introdução
-              a um
-              conteúdo adicional. Este conteúdo é um pouco maior.</p>
+        <% news.forEach( notice => {%>
+          <div class="card">
+            <img class="card-img-top" src="/images/imag-banner.jpg" alt="Imagem de capa do card">
+            <div class="card-body">
+              <h5 class="card-title"><%= notice.titulo%></h5>
+              <p class="card-text">
+                <%= notice.conteudo %>.</p>
+            </div>
           </div>
-        </div>
+        <%})%>
         <div class="card p-3">
           <blockquote class="blockquote mb-0 card-body">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -162,7 +164,8 @@
             </footer>
           </blockquote>
         </div>
-        <div class="card">
+        
+        <!-- <div class="card">
           <img class="card-img-top" src="/images/imag-banner.jpg" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">Título do card</h5>
@@ -203,8 +206,8 @@
               </small>
             </footer>
           </blockquote>
-        </div>
-        <div class="card">
+        </div> -->
+        <!-- <div class="card">
           <div class="card-body">
             <h5 class="card-title">Título do card</h5>
             <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um
@@ -212,17 +215,17 @@
               ação.
             </p>
             <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
-          </div>
-        </div>
+          </div> 
+        </div>-->
       </div>
       </div>
-
+    </div>
     </section>
 
     <!--**************** Tabela de jogos **************** -->
     <div class="resultados-rodada-titulo" id="jogos">
       <p></p>
-      <h6>Proximos <span>Jogos</span> - 2020</h6>
+      <h6>Proximos <span>Jogos</span> - 2021</h6>
       <hr class="linha-horizontal">
     </div>
     <div class="section-jogos ">

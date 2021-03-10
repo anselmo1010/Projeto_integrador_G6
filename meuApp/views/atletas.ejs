@@ -4,7 +4,7 @@
   <main class="bg-light">
     <%- include('./partials/header.ejs') %>
     <div class="container mt-3">
-      <form method='POST'>
+      <form method='POST' action="/users/signUp">
         <div class="row">
           <div class="col-sm-4">
             <div class="row ">
@@ -42,27 +42,27 @@
                       <div class="row">
                         <th scope="col"><label for="inf-nome">Nome</label></th>
                         <th class="col"><input type="text" class="form-control" id="inf-nome" placeholder="Pedro"
-                            value="" required></th>
+                            value="" required name="a_fname"></th>
                       </div>
                     </tr>
                     <tr>
                       <div class="row">
                         <th scope="col"><label for="inf-sobrenome">Sobrenome</label></th>
                         <th class="col"><input type="text" class="form-control" id="inf-sobrenome" placeholder="Silva"
-                            value="" required></th>
+                            value="" required name="a_lname"></th>
                       </div>
                     </tr>
                     <div class="row">
                       <th scope="col"><label for="inf-nacionalidade">Nacionalidade</label></th>
                       <th class="col"><input type="text" class="form-control" id="inf-nacionalidade"
-                          placeholder="Brasileiro" value="" required></th>
+                          placeholder="Brasileiro" value="" required name="a_nationaly"></th>
                     </div>
                     </tr>
                     <tr>
                       <div class="row">
                         <th scope="col"><label for="inf-data">Data de nascimento</label></th>
                         <th class="col"><input type="date" class="form-control" id="inf-data" placeholder="d/m/y"
-                            required>
+                            required name="a_dt_nasc">
                         </th>
                       </div>
                     </tr>
@@ -70,7 +70,16 @@
                       <div class="row">
                         <th scope="col"><label for="inf-email">E-mail</label></th>
                         <th class="col"> <input type="email" class="form-control" id="inf-email"
-                            placeholder="nome@exemplo.com">
+                            placeholder="nome@exemplo.com" name="a_email" required>
+                          <div class="row">
+                        </th>
+                      </div>
+                    </tr>
+                    <tr>
+                      <div class="row">
+                        <th scope="col"><label for="inf-email">Senha</label></th>
+                        <th class="col"> <input type="password" class="form-control" id="inf-email"
+                            placeholder="coloque sua senha aqui" required name="a_pass" >
                           <div class="row">
                         </th>
                       </div>
@@ -78,7 +87,7 @@
                     <div class="row">
                       <th scope="col"><label for="inf-telefone">Telefone (WhatsApp)</label></th>
                       <th class="col"> <input type="text" class="form-control cel-sp-mask" id="inf-telefone"
-                          placeholder="Ex.: (00) 00000-0000">
+                          placeholder="Ex.: (00) 00000-0000" name="a_phone">
                         <div class="row">
                       </th>
                     </div>
@@ -87,7 +96,7 @@
                       <div class="row">
                         <th scope="col"><label for="inf-pedominante">Pé Dominante</label></th>
                         <th class="col"><input type="text" class="form-control" id="inf-pedominante"
-                            placeholder="(Destro,Canhoto ou Ambidestro)" value="" required></th>
+                            placeholder="(Destro,Canhoto ou Ambidestro)" value="" required name="a_pedominante"></th>
                       </div>
                     </tr>
                     <tr>
@@ -123,7 +132,7 @@
                           <label for="inf-outrasposicoes">Outras posições</label>
                         </th>
                         <th class="col"><input type="text" class="form-control" id="inf-outrasposicoes"
-                            placeholder="Ex: Lateral Direito , Volante" value="" required></th>
+                            placeholder="Ex: Lateral Direito , Volante" value="" name="a_outrasposicoes"></th>
                       </div>
                     </tr>
                   </tbody>
@@ -138,7 +147,7 @@
                       <th scope="row">
                         <label for="inf-conquistas">Descreva suas conquistas</label>
                         <textarea class="form-control" id="inf-conquistas"
-                          placeholder="Ex : Campeão da copa Martins Neto Ano: 2018/19" required rows="3"></textarea>
+                          placeholder="Ex : Campeão da copa Martins Neto Ano: 2018/19" required rows="3" name="a_titulos"></textarea>
                       </th>
                     </tr>
                   </tbody>
@@ -153,9 +162,9 @@
                   <tbody>
                     <tr>
                       <th scope="row"><input type="number" class="form-control" id="inf-peso" placeholder="Ex: 90Kg"
-                          required></th>
+                          required name="a_peso"></th>
                       <td><input type="number" class="form-control" id="inf-altura"
-                          placeholder="Valor em centimetros ex: 1,80 = 180cm " required></td>
+                          placeholder="Valor em centimetros ex: 1,80 = 180cm " required name="a_altura"></td>
                     </tr>
                   </tbody>
                 </table>
@@ -201,7 +210,7 @@
                     <div class="form-group">
                       <input type="checkbox" id="inf-clinic-outros" name="inf-clinic-outros" value="Outros">
                       <label for="inf-clinic-outros">Outros</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="inf-clinicas"></textarea>
                     </div>
                   </div>
                   <div class="card">
@@ -217,7 +226,7 @@
 
                       <textarea class=" card-body form-control" id="exampleFormControlTextarea_perfil"
                         placeholder="Faça um breve resumo dos seu aspectos técnicos:    Atuo como primeiro volante/lateral esquerdo ,bom em passes curtos ,antecipações, boa cobertura e chute de longa distancia."
-                        required rows="3"></textarea>
+                        required rows="3" name="a_aspect_tecnico"></textarea>
                     </div>
                   </div>
                   <div class="card">
@@ -232,9 +241,12 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                       <textarea class=" card-body form-control" id="exampleFormControlTextarea_perfil"
                         placeholder="Agora um breve resumo dos seu aspectos fisicos:  Tenho como caracteristica a velocidade e agilidade,bom tempo de reação e visão periférica "
-                        required rows="3"></textarea>
+                        required rows="3" name="a_aspect_fisico"></textarea>
                     </div>
+
+                  
                   </div>
+                  
                   <button type="submit" value="upload" class="btn btn-danger btn-lg btn-block">Enviar</button>
                 </div>
               </div>

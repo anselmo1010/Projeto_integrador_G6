@@ -20,9 +20,11 @@ const HomeController = {
         //console.log(matchs[0].resultado);
         
         
-        const news = await News.findAll();
+        const news = await News.findAll({
+            limit: 4
+        });
         console.log(news)    
-
+        
 
         return res.render("home", {"news": news, matchs: matchs});
     },

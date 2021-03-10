@@ -1,11 +1,41 @@
 const Sequelize = require('sequelize');
 const config = require('../config/database')
-const { Profile, Recruiter } = require('../models');
+const { Profile, Recruiter, Athlete } = require('../models');
 const { use } = require('../routes');
 
 const LoginController = {
     index: (req, res) => {
         res.render('login')
+    },
+    signUpAthlete: async (req, res) => {
+      let {a_fname, a_lname, a_nationaly, a_dt_nasc, a_email, a_pass, a_phone, a_pedominante, posicao, a_outrasposicoes, a_peso, a_altura} = req.body;
+
+      const profile = await Profile.create({
+          email: a_email,
+          senha: a_pass,
+          tipo: 1
+      })
+
+      Athlete.create(
+          {
+              nome: a_fname,
+              sobrenome: a_lname,
+              nacionalidade: a_nationaly,
+              data_nascimento: '1997-01-03',
+              telefone: a_phone,
+              pe_dominante: a_pedominante,
+              posicao: posicao,
+              outras_posicoes: a_outrasposicoes,
+              peso: a_peso,
+              altura: a_altura,
+              fk_perfil: profile.id_perfil
+
+          }
+      )
+
+
+
+      return res.render('login', {createAthlete: true});
     },
     signIn: async (req, res) => {
         if (!req.session.user) {
@@ -62,6 +92,9 @@ const LoginController = {
     signOut: (req, res) => {
         req.session.destroy();
         res.redirect('login');  
+    },
+    admin: (req, res) => {
+        res.render('adminobs', { user: req.session.user })
     }
 }
 
