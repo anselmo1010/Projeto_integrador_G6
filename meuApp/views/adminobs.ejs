@@ -31,15 +31,7 @@
 
 
     <!-- Sidebar -->
-    <div class="bg-dark border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading logo"></div>
-      <div class="list-group list-group-flush">
-        <a href="/admintable" class="list-group-item list-group-item-action bg-dark text-white">Atletas</a>
-        <a href="/adminobs" class="list-group-item list-group-item-action bg-dark text-white">Observações</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Esque</a>
-      </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
+    <%- include('./partials/sidebar.ejs')  %>
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
@@ -64,8 +56,9 @@
           </ul>
         </div>
       </nav>
+
       <!--  Obsevation-Content -->
-      <div id="accordion">
+      <!-- <div id="accordion">
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
@@ -127,8 +120,38 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!--  Obsevation-Content-->
+      
+      <form action="">
+        <div class="form-group row mt-3 md-2 col-8">
+
+          <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Campeonato:</label>
+          <div class="col-sm-10">
+            <select class="form-control"
+              id="exampleFormControlSelect1" name="r_club" t>
+              <option t>Ajax</option>
+              <option>Catandeiras de Heliópolis</option>
+              <option>Dragões da Casa Verde</option>
+              <option>Guarani do jardim Peri</option>
+              <option>7 de Setembro </option>
+          </select>
+          </div>
+          
+      </div>
+
+      <div class="section-jogos ">
+        <div class="container">
+          <div class="row">
+            <%- include('./partials/matchs.ejs')  %>
+            <%- include('./partials/table-classification.ejs')  %>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+      
 
     </div>
     <!-- /#wrapper -->

@@ -41,7 +41,32 @@
       
       <!--  Table-Content -->
       <section class="my-3 mx-2" id='table-atletas'>
-        <%=athlete.nome%>
+        <div class="container">
+          <table class="table">
+            <thead class="thead-light">
+              <th scope="col"></th>
+              <th scope="col">Dados do Atleta</th>
+            </thead>
+            <tbody>
+              <tr>
+                <div class="form-row">
+                  <div class="col-6 ">
+                    <th scope="col"><label for="inf-nome">Nome</label></th>
+                  <th ><input type="text" class="form-control" id="inf-nome" 
+                       readonly name="a_fname" value="<%=athlete.nome%>"></th>
+                  </div>
+                
+                <div class="col-6 ">
+                  <th scope="col"><label for="inf-sobrenome">Sobrenome</label></th>
+                  <th class="col-6"><input type="text" class="form-control" id="inf-sobrenome" placeholder="Silva"
+                       readonly value="Sousa"></th>
+                </div>
+                </div>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
       </section>
       <!-- /#page-content-wrapper -->
 

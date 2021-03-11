@@ -50,36 +50,41 @@ const LoginController = {
     },
     signUpAthlete: async (req, res) => {
       let {a_fname, a_lname, a_nationaly, a_dt_nasc, a_email, a_pass, a_phone, a_pedominante, posicao, a_outrasposicoes, a_peso, a_altura} = req.body;
+      let succes = null;
+      let message = "";
 
-     await Profile.create({
-          email: a_email,
-          senha: a_pass,
-          tipo: 2
-      }).then( profile => {
-        Athlete.create(
-            {
-                nome: a_fname,
-                sobrenome: a_lname,
-                nacionalidade: a_nationaly,
-                data_nascimento: '1997-01-03',
-                telefone: a_phone,
-                pe_dominante: a_pedominante,
-                posicao: posicao,
-                outras_posicoes: a_outrasposicoes,
-                peso: a_peso,
-                altura: a_altura,
-                fk_perfil: profile.id_perfil
+     try {
+        await Profile.create({
+            email: a_email,
+            senha: a_pass,
+            tipo: 2
+        }).then( profile => {
+          Athlete.create(
+              {
+                  nome: a_fname,
+                  sobrenome: a_lname,
+                  nacionalidade: a_nationaly,
+                  data_nascimento: '1997-01-03',
+                  telefone: a_phone,
+                  pe_dominante: a_pedominante,
+                  posicao: posicao,
+                  outras_posicoes: a_outrasposicoes,
+                  peso: a_peso,
+                  altura: a_altura,
+                  fk_perfil: profile.id_perfil
+    
+              }
+          )
+          return res.render('login', {success: true, message: "Atleta registrado com sucesso"});
   
-            }
-        )
-
-      } ).catch(error =>{
-          console.log('Erro: ', error.message)
-      })
+        } ).catch(error =>{
+            return res.render('login', {success: false, message: "Erro ao cadastrar o atleta, tente novamente"});
+        })
+     } catch (error) {
+         
+     }
 
       
-
-      return res.render('login', {createAthlete: true});
     },
     signIn: async (req, res) => {
         let athletes = []
@@ -117,6 +122,7 @@ const LoginController = {
 
                     } else if (userProfile.tipo == 2) {
 
+                        res.render('login',{ success: false, message: 'Nossa área para atletas está em desenvolvimento, em breve entraremos em contado'} );
                     }
 
 
@@ -125,13 +131,9 @@ const LoginController = {
                     res.render('login',{ success: false, message: 'Usuário/Senha estão incorretos'} );
                 }
 
-                console.log(userProfile.email)
-
-
-
                 req.session.user = user;
             } catch (error) {
-
+                res.render('login',{ success: false, message: error.message} );
             }
 
             
