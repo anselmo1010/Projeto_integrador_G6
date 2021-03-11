@@ -147,7 +147,7 @@ const LoginController = {
         res.redirect('login');  
     },
     admin: (req, res) => {
-        res.render('adminobs', { user: req.session.user })
+        res.render('adminobs', { user: req.session.user, clubs: [] })
     }
 }
 

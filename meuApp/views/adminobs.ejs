@@ -123,18 +123,17 @@
       </div> -->
       <!--  Obsevation-Content-->
       
-      <form action="">
+      <form action="" method="POST">
         <div class="form-group row mt-3 md-2 col-8">
 
-          <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Campeonato:</label>
+          <label for="selectCompetition" class="col-sm-2 col-form-label">Campeonato:</label>
           <div class="col-sm-10">
             <select class="form-control"
-              id="exampleFormControlSelect1" name="r_club" t>
-              <option t>Ajax</option>
-              <option>Catandeiras de Heliópolis</option>
-              <option>Dragões da Casa Verde</option>
-              <option>Guarani do jardim Peri</option>
-              <option>7 de Setembro </option>
+              id="selectCompetition" name="championship" onchange="this.form.submit()">
+              <option>Martins Neto Cup</option>
+              <option>Paulistão varzea cup</option>
+              <option>Copinha RJ</option>
+              <!-- <option>Carioca league</option> -->
           </select>
           </div>
           
@@ -144,7 +143,92 @@
         <div class="container">
           <div class="row">
             <%- include('./partials/matchs.ejs')  %>
-            <%- include('./partials/table-classification.ejs')  %>
+            <!-- <%- include('./partials/table-classification.ejs')  %> -->
+            <div class="col-lg-6">
+              <div class="proximo-jogo-lider bg-light" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000">
+                <table class="table custom-table ">
+                  <thead>
+                    <tr>
+                      <th>P</th>
+                      <th>Time</th>
+                      <th>V</th>
+                      <th class="n-empates">E</th>
+                      <th>D</th>
+                      <th>PTS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% clubs.forEach((club, index )=> { %>
+                      <tr>
+                        <td><%=index%></td>
+                        <td><strong class="text-table-custom"><%=club.name%></strong></td>
+                        <td><%=club.v%></td>
+                        <td class="n-empates"><%=club.e%></td>
+                        <td><%=club.d%></td>
+                        <td>140</td>
+                      </tr>
+                    <%})%>
+                    <!-- <tr>
+                      <td>2</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td><strong class="text-table-custom">Paris Saint Germain</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td><strong class="text-table-custom">Paris Saint Germain</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td><strong class="text-table-custom">Paris Saint Germain</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr> -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
