@@ -3,8 +3,10 @@ const AtletasController = {
     index: (req, res) => {
         return res.render("atletas");
     },
-    getAthletes: async (req, res) => {
+    getAthlete: async (req, res) => {
         const athletes = Athlete.findAll();
+
+        res.render('login')
 
         
     }

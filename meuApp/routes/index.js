@@ -11,6 +11,8 @@ var AdminObsController = require("../controllers/AdminObsController");
 router.get("/adminobs", AdminObsController.index);
 router.get("/admintable", AdminTableController.index);
 router.get("/atletas", AtletasController.index);
+router.get("/atletas", AtletasController.index);
+router.get("/atletas:id", AtletasController.getAthlete);
 router.get("/", HomeController.index);
 router.post("/saveContact", HomeController.saveContact);
 

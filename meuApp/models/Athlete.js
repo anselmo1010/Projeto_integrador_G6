@@ -1,5 +1,5 @@
-module.exports = async (sequelize, DataType) => {
-  const Athlete = await sequelize.define('Athlete', {
+module.exports =  (sequelize, DataType) => {
+  const Athlete =  sequelize.define('Athlete', {
     id_atleta: {
       type: DataType.INTEGER,
       allowNull: false,

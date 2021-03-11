@@ -51,34 +51,38 @@ const LoginController = {
     signUpAthlete: async (req, res) => {
       let {a_fname, a_lname, a_nationaly, a_dt_nasc, a_email, a_pass, a_phone, a_pedominante, posicao, a_outrasposicoes, a_peso, a_altura} = req.body;
 
-      const profile = await Profile.create({
+     await Profile.create({
           email: a_email,
           senha: a_pass,
-          tipo: 1
+          tipo: 2
+      }).then( profile => {
+        Athlete.create(
+            {
+                nome: a_fname,
+                sobrenome: a_lname,
+                nacionalidade: a_nationaly,
+                data_nascimento: '1997-01-03',
+                telefone: a_phone,
+                pe_dominante: a_pedominante,
+                posicao: posicao,
+                outras_posicoes: a_outrasposicoes,
+                peso: a_peso,
+                altura: a_altura,
+                fk_perfil: profile.id_perfil
+  
+            }
+        )
+
+      } ).catch(error =>{
+          console.log('Erro: ', error.message)
       })
 
-      Athlete.create(
-          {
-              nome: a_fname,
-              sobrenome: a_lname,
-              nacionalidade: a_nationaly,
-              data_nascimento: '1997-01-03',
-              telefone: a_phone,
-              pe_dominante: a_pedominante,
-              posicao: posicao,
-              outras_posicoes: a_outrasposicoes,
-              peso: a_peso,
-              altura: a_altura,
-              fk_perfil: profile.id_perfil
-
-          }
-      )
-
-
+      
 
       return res.render('login', {createAthlete: true});
     },
     signIn: async (req, res) => {
+        let athletes = []
         if (!req.session.user) {
 
             try {
@@ -129,8 +133,12 @@ const LoginController = {
             } catch (error) {
 
             }
+
+            
         }
-        res.render('admintable', { user: req.session.user })
+        athletes = await Athlete.findAll();
+        // console.log(athletes)
+        res.render('admintable', { user: req.session.user, "athletes": athletes })
     },
     signOut: (req, res) => {
         req.session.destroy();
