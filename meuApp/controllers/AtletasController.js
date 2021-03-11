@@ -4,9 +4,18 @@ const AtletasController = {
         return res.render("atletas");
     },
     getAthlete: async (req, res) => {
-        const athletes = Athlete.findAll();
+        let id = req.params.id;
 
-        res.render('login')
+
+        const athlete = await Athlete.findOne({
+            where: {
+                id_atleta: id
+            }
+        });
+
+        console.log('Atleta:', athlete)
+
+        res.render('admin-profile', {"athlete": athlete, user: req.session.user})
 
         
     }
