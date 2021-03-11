@@ -28,7 +28,7 @@ const HomeController = {
 
         return res.render("home", {"news": news, matchs: matchs});
     },
-    saveContact: (req, res) => {
+    saveContact: async (req, res) => {
         const {c_fname, c_lname, c_email, c_phone, c_message} = req.body;
         
         Contact.create({
@@ -40,9 +40,25 @@ const HomeController = {
             created_at: 'now()',
             update_at: 'now()'
         })
-        console.log('Contato salvo com sucesso')
+        const matchs = await Match.findAll({
+            where: {
+                fk_resultado: {
+                    [Op.not]: null
+                }
+            },
+            include: ['resultado', 'clube_casa', 'clube_visitante'],
+            //order:['data_partida','DESC'], 
+            limit: 4
+        });
 
-        res.render('home')
+        //console.log(matchs[0].resultado);
+        
+        
+        const news = await News.findAll({
+            limit: 4
+        });
+
+        res.render('home',  {"news": news, matchs: matchs})
        
 
     }
