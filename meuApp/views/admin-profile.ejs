@@ -41,7 +41,6 @@
 
       <!--  Table-Content -->
       <section class="my-3 mx-2" id='table-atletas'>
-<<<<<<< HEAD
         
             <div class="container mt-3">
               <form method='POST' action="/users/signUp">
@@ -54,7 +53,7 @@
                             <input class="file file-button" id="upload" type="button" hidden>
                             <figure class="personal-figure ">
                               <input class="file-chooser" type="file" accept="image/*" hidden>
-                              <img class="preview-img personal-avatar" src="/images/perfil.jpg">
+                              <img class="preview-img personal-avatar" src="/images/perfil.jpeg">
                             </figure>
                           </label>
                         </div>
@@ -270,7 +269,7 @@
 
                           </div>
 
-                          <button type="submit" value="upload" class="btn btn-danger btn-lg btn-block">Enviar</button>
+                          <!-- <button type="submit" value="upload" class="btn btn-danger btn-lg btn-block">Enviar</button> -->
                         </div>
                       </div>
                     </div>
@@ -279,36 +278,7 @@
               </form>
             </div>
 
-        <%=athlete.nome%>
-        <p><%=athlete.sobrenome%></p>
-=======
-        <div class="container">
-          <table class="table">
-            <thead class="thead-light">
-              <th scope="col"></th>
-              <th scope="col">Dados do Atleta</th>
-            </thead>
-            <tbody>
-              <tr>
-                <div class="form-row">
-                  <div class="col-6 ">
-                    <th scope="col"><label for="inf-nome">Nome</label></th>
-                  <th ><input type="text" class="form-control" id="inf-nome" 
-                       readonly name="a_fname" value="<%=athlete.nome%>"></th>
-                  </div>
-                
-                <div class="col-6 ">
-                  <th scope="col"><label for="inf-sobrenome">Sobrenome</label></th>
-                  <th class="col-6"><input type="text" class="form-control" id="inf-sobrenome" placeholder="Silva"
-                       readonly value="Sousa"></th>
-                </div>
-                </div>
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
->>>>>>> 75c708c1676809f838de9015e1a7c9da0e907655
+        
       </section>
       <!-- /#page-content-wrapper -->
 
