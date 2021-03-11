@@ -31,15 +31,7 @@
 
 
     <!-- Sidebar -->
-    <div class="bg-dark border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading logo"></div>
-      <div class="list-group list-group-flush">
-        <a href="/admintable" class="list-group-item list-group-item-action bg-dark text-white">Atletas</a>
-        <a href="/adminobs" class="list-group-item list-group-item-action bg-dark text-white">Observações</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Esque</a>
-      </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
+    <%- include('./partials/sidebar.ejs')  %>
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
@@ -64,8 +56,9 @@
           </ul>
         </div>
       </nav>
+
       <!--  Obsevation-Content -->
-      <div id="accordion">
+      <!-- <div id="accordion">
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
@@ -127,8 +120,122 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!--  Obsevation-Content-->
+      
+      <form action="" method="POST">
+        <div class="form-group row mt-3 md-2 col-8">
+
+          <label for="selectCompetition" class="col-sm-2 col-form-label">Campeonato:</label>
+          <div class="col-sm-10">
+            <select class="form-control"
+              id="selectCompetition" name="championship" onchange="this.form.submit()">
+              <option>Martins Neto Cup</option>
+              <option>Paulistão varzea cup</option>
+              <option>Copinha RJ</option>
+              <!-- <option>Carioca league</option> -->
+          </select>
+          </div>
+          
+      </div>
+
+      <div class="section-jogos ">
+        <div class="container">
+          <div class="row">
+            <%- include('./partials/matchs.ejs')  %>
+            <!-- <%- include('./partials/table-classification.ejs')  %> -->
+            <div class="col-lg-6">
+              <div class="proximo-jogo-lider bg-light" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000">
+                <table class="table custom-table ">
+                  <thead>
+                    <tr>
+                      <th>P</th>
+                      <th>Time</th>
+                      <th>V</th>
+                      <th class="n-empates">E</th>
+                      <th>D</th>
+                      <th>PTS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% clubs.forEach((club, index )=> { %>
+                      <tr>
+                        <td><%=index%></td>
+                        <td><strong class="text-table-custom"><%=club.name%></strong></td>
+                        <td><%=club.v%></td>
+                        <td class="n-empates"><%=club.e%></td>
+                        <td><%=club.d%></td>
+                        <td>140</td>
+                      </tr>
+                    <%})%>
+                    <!-- <tr>
+                      <td>2</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td><strong class="text-table-custom">Juventus</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td><strong class="text-table-custom">Paris Saint Germain</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td><strong class="text-table-custom">Paris Saint Germain</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td><strong class="text-table-custom">Paris Saint Germain</strong></td>
+                      <td>22</td>
+                      <td class="n-empates">3</td>
+                      <td>2</td>
+                      <td>140</td>
+                    </tr> -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+      
 
     </div>
     <!-- /#wrapper -->
