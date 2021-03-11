@@ -32,16 +32,254 @@
 
     <!-- Sidebar -->
     <%- include('./partials/sidebar.ejs')  %>
-   
+
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <!-- Nav-Content -->
       <%- include('./partials/header-admin.ejs')  %>
-      
+
       <!--  Table-Content -->
       <section class="my-3 mx-2" id='table-atletas'>
+        
+            <div class="container mt-3">
+              <form method='POST' action="/users/signUp">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="row ">
+                      <div class="container-img col ">
+                        <div class="personal-image " action='image/upload' encType="multipart/form-data">
+                          <label class="label">
+                            <input class="file file-button" id="upload" type="button" hidden>
+                            <figure class="personal-figure ">
+                              <input class="file-chooser" type="file" accept="image/*" hidden>
+                              <img class="preview-img personal-avatar" src="/images/perfil.jpg">
+                            </figure>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 mt-3">
+                    <nav class="sticky-top bg-light">
+                      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                          role="tab" aria-controls="nav-home" aria-selected="true">Inf.pessoais</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                          role="tab" aria-controls="nav-profile" aria-selected="false">Fisicos</a>
+                      </div>
+                    </nav>
+                    <div class="tab-content " id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                        aria-labelledby="nav-home-tab">
+                        <table class="table table-bordered">
+                          <thead class="thead-light">
+                            <th scope="col"></th>
+                            <th scope="col">Dados Pessoais</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <div class="row">
+                                <th scope="col"><label for="inf-nome">Nome</label></th>
+                                <th class="col"><label type="text" class="form-control" id="inf-nome"
+                                     value="" required name="a_fname"><%=athlete.nome%></th>
+                              </div>
+                            </tr>
+                            <tr>
+                              <div class="row">
+                                <th scope="col"><label for="inf-sobrenome">Sobrenome</label></th>
+                                <th class="col"><label type="text" class="form-control" id="inf-sobrenome"
+                                    placeholder="Silva" value="" required name="a_lname"><%=athlete.sobrenome%></th>
+                              </div>
+                            </tr>
+                            <div class="row">
+                              <th scope="col"><label for="inf-nacionalidade">Nacionalidade</label></th>
+                              <th class="col"><label type="text" class="form-control" id="inf-nacionalidade"
+                                  placeholder="Brasileiro" value="" required name="a_nationaly"><%=athlete.nacionalidade%>
+                                  </th>
+                            </div>
+                            </tr>
+                            <tr>
+                              <div class="row">
+                                <th scope="col"><label for="inf-data">Data de nascimento</label></th>
+                                <th class="col"><labem type="date" class="form-control" id="inf-data"
+                                    placeholder="d/m/y" required name="a_dt_nasc"><%=athlete.data_nascimento%>
+                                </th>
+                              </div>
+                            </tr>
+                            <tr>
+                              <div class="row">
+                                <th scope="col"><label for="inf-email">E-mail</label></th>
+                                <th class="col"> <label type="email" class="form-control" id="inf-email"
+                                    placeholder="nome@exemplo.com" name="a_email" required><%=athlete.email%>
+                                  <div class="row">
+                                </th>
+                              </div>
+                            </tr>
+                            <div class="row">
+                              <th scope="col"><label for="inf-telefone">Telefone (WhatsApp)</label></th>
+                              <th class="col"> <label type="text" class="form-control cel-sp-mask" id="inf-telefone"
+                                  placeholder="Ex.: (00) 00000-0000" name="a_phone"><%=athlete.telefone%>
+                                <div class="row">
+                              </th>
+                            </div>
+                            </tr>
+                            <tr>
+                              <div class="row">
+                                <th scope="col"><label for="inf-pedominante">Pé Dominante</label></th>
+                                <th class="col"><label type="text" class="form-control" id="inf-pedominante"
+                                    placeholder="(Destro,Canhoto ou Ambidestro)" value="" required
+                                    name="a_pedominante"><%=athlete.pe_dominante%>
+                                </th>
+                              </div>
+                            </tr>
+                            <tr>
+                              <div class="row">
+                                <th scope="col"><label for="inf-posicao">Posição</label></th>
+                                <th class="col"> <label for="text"
+                                    class="form-control"><%=athlete.posicao%></label></th>
+                              </div>
+                            </tr>
+                            <tr>
+                              <div class="row">
+                                <th scope="col">
+                                  <label for="inf-outrasposicoes">Outras posições</label>
+                                </th>
+                                <th class="col"><label type="text" class="form-control" id="inf-outrasposicoes"
+                                    value="" name="a_outrasposicoes"><%=athlete.outras_posicoes%></th>
+                              </div>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <table class="table table-bordered">
+                          <thead class="thead-light ">
+                            <th scope="col">Titulos conquistados</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">
+                                <label for="inf-conquistas">Descreva suas conquistas</label>
+                                <textarea class="form-control" id="inf-conquistas"
+                                  placeholder="Ex : Campeão da copa Martins Neto Ano: 2018/19" required rows="3"
+                                  name="a_titulos">Campeão Mundial</textarea>
+                              </th>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-bordered ">
+                          <thead class="thead-light">
+                            <tr>
+                              <th scope="col"><label for="inf-peso" required>Peso</label></th>
+                              <th scope="col"><label for="inf-altura" required>Altura (cm)</label></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row"><label type="number" class="form-control" id="inf-peso"
+                                   required name="a_peso"><%= athlete.peso + " Kg." %> </th>
+                              <td><label type="number" class="form-control" id="inf-altura"
+                                   required name="a_altura"><%= athlete.altura + " cm." %> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane fade border" id="nav-profile" role="tabpanel"
+                        aria-labelledby="nav-profile-tab">
+                        <div class="accordion" id="accordionExample">
+                          <div class="card-header bg-light">
+                            <h4>Inf.clinicas (Lesões)</h4>
+                          </div>
+                          <div class="container mt-3">
+                            <input type="checkbox" id="inf-clinic-cabeca" name="inf-clinic-cabeca" value="Cabeça">
+                            <label for="inf-clinic-cabeca">Cabeça</label><br>
+                            <input type="checkbox" id="inf-clinic-pescoca" name="inf-clinic-pescoca" value="Pescoço">
+                            <label for="inf-clinic-pescoca">Pescoço</label><br>
+                            <input type="checkbox" id="inf-clinic-ombros" name="inf-clinic-ombros" value="Ombros">
+                            <label for="inf-clinic-ombros">Ombros</label><br>
+                            <input type="checkbox" id="inf-clinic-costas" name="inf-clinic-costas" value="Costas">
+                            <label for="inf-clinic-costas">Costas</label><br>
+                            <input type="checkbox" id="inf-clinic-bracos" name="inf-clinic-bracos" value="Braços">
+                            <label for="inf-clinic-bracos">Braços</label><br>
+                            <input type="checkbox" id="inf-clinic-antebracos" name="inf-clinic-antebracos"
+                              value="Antebraços">
+                            <label for="inf-clinic-antebracos">Antebraços</label><br>
+                            <input type="checkbox" id="inf-clinic-pulso" name="inf-clinic-pulso" value="Pulso">
+                            <label for="inf-clinic-pulso">Pulso</label><br>
+                            <input type="checkbox" id="inf-clinic-maos" name="inf-clinic-maos" value="Mãos">
+                            <label for="inf-clinic-maos">Mãos</label><br>
+                            <input type="checkbox" id="inf-clinic-dedos" name="inf-clinic-dedos" value="Dedos">
+                            <label for="inf-clinic-dedos">Dedos</label><br>
+                            <input type="checkbox" id="inf-clinic-tibia" name="inf-clinic-tibia" value="Tíbia">
+                            <label for="inf-clinic-tibia">Tíbia</label><br>
+                            <input type="checkbox" id="inf-clinic-panturrilha" name="inf-clinic-panturrilha"
+                              value="Panturrilha">
+                            <label for="inf-clinic-panturrilha">Panturrilha</label><br>
+                            <input type="checkbox" id="inf-clinic-joelho" name="inf-clinic-joelho" value="Joelho">
+                            <label for="inf-clinic-joelho">Joelho</label><br>
+                            <input type="checkbox" id="inf-clinic-anteriorCoxa" name="inf-clinic-anteriorCoxa"
+                              value="Anterior Coxa">
+                            <label for="inf-clinic-anteriorCoxa">Anterior Coxa</label><br>
+                            <input type="checkbox" id="inf-clinic-posteriorCoxa" name="inf-clinic-posteriorCoxa"
+                              value="Posterior Coxa">
+                            <label for="inf-clinic-posteriorCoxa">Posterior Coxa</label><br>
+                            <input type="checkbox" id="inf-clinic-adutores" name="inf-clinic-adutores" value="Adutores">
+                            <label for="inf-clinic-adutores">Adutores</label><br>
+                            <input type="checkbox" id="inf-clinic-quadril" name="inf-clinic-quadril" value="Quadril">
+                            <label for="inf-clinic-quadril">Quadril</label><br>
+                            <div class="form-group">
+                              <input type="checkbox" id="inf-clinic-outros" name="inf-clinic-outros" value="Outros">
+                              <label for="inf-clinic-outros">Outros</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                name="inf-clinicas"></textarea>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingOne">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                  data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Descreva seus aspectos técnicos :
+                              </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                              data-parent="#accordionExample">
+
+                              <textarea class=" card-body form-control" id="exampleFormControlTextarea_perfil"
+                                placeholder="Faça um breve resumo dos seu aspectos técnicos:    Atuo como primeiro volante/lateral esquerdo ,bom em passes curtos ,antecipações, boa cobertura e chute de longa distancia."
+                                required rows="3" name="a_aspect_tecnico"></textarea>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" id="headingTwo">
+                              <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Descreva seus aspectos Fisicos :
+                                </button>
+                              </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                              data-parent="#accordionExample">
+                              <textarea class=" card-body form-control" id="exampleFormControlTextarea_perfil"
+                                placeholder="Agora um breve resumo dos seu aspectos fisicos:  Tenho como caracteristica a velocidade e agilidade,bom tempo de reação e visão periférica "
+                                required rows="3" name="a_aspect_fisico"></textarea>
+                            </div>
+
+
+                          </div>
+
+                          <button type="submit" value="upload" class="btn btn-danger btn-lg btn-block">Enviar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
         <%=athlete.nome%>
+        <p><%=athlete.sobrenome%></p>
       </section>
       <!-- /#page-content-wrapper -->
 
