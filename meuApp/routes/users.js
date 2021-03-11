@@ -7,6 +7,7 @@ let auth = require('../middlewares/auth')
 router.get("/login",auth, LoginController.signIn)
 router.post("/login", LoginController.signIn)
 router.post("/signUp", LoginController.signUpAthlete)
+router.post("/signUpRecruiter", LoginController.signUpRecruiter)
 router.get('/logout', LoginController.signOut)
 router.get('/adminobs', LoginController.admin)
 

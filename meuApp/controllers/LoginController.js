@@ -7,6 +7,47 @@ const LoginController = {
     index: (req, res) => {
         res.render('login')
     },
+    signUpRecruiter: async (req, res) => {
+        let {r_fname, r_lname, r_club, r_email, r_password} = req.body;
+        let success =  undefined;
+        let message = "";
+       const hasAlreadyEmail = await Profile.findAll({
+            where:{
+                email: r_email
+            }
+        })
+        console.log("TAMANHO:",hasAlreadyEmail.length)
+
+         if(hasAlreadyEmail.length == 0){
+            Profile.create(
+                {
+                    email: r_email,
+                    senha: r_password,
+                    tipo: 1
+                }
+            ).then( profile => {
+                Recruiter.create({
+                    nome: r_fname,
+                    clube_representado: r_club,
+                    fk_perfil: profile.id_perfil
+                })
+    
+            }).catch( error => {
+                console.log("ERRO:", error.message)
+            })
+
+            success = true
+            message = "Recrutador cadastrado com sucesso!"
+         }else{
+            success = false
+            message = "Email já existe, informe outro email e continue!"
+         }
+
+        
+
+        res.render('login', {success, message} )
+
+    },
     signUpAthlete: async (req, res) => {
       let {a_fname, a_lname, a_nationaly, a_dt_nasc, a_email, a_pass, a_phone, a_pedominante, posicao, a_outrasposicoes, a_peso, a_altura} = req.body;
 
@@ -53,9 +94,11 @@ const LoginController = {
                         }
                     }
                 )
+                console.log(userProfile)
 
                 if (userProfile) {
-                    if (userProfile.id_perfil == 1) {
+                    
+                    if (userProfile.tipo == 1) {
                         let recruiter = await Recruiter.findOne({
                             include: {
                                 model: Profile,
@@ -68,14 +111,14 @@ const LoginController = {
                         user = { name: recruiter.nome, email: userProfile.email }
 
 
-                    } else if (userProfile.id_perfil == 2) {
+                    } else if (userProfile.tipo == 2) {
 
                     }
 
 
 
                 } else {
-                    res.redirect('login', );
+                    res.render('login',{ success: false, message: 'Usuário/Senha estão incorretos'} );
                 }
 
                 console.log(userProfile.email)

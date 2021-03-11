@@ -4,7 +4,26 @@
     <main>
         <%- include('./partials/header.ejs') %>
         <div class="container ">
+            <% if (typeof success !== "undefined") { %>
+                <% if(success) { %>
+                    <div class="alert alert-success alert-dismissible mt-3" role="alert">
+                        <%=message %>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                <% }else { %> 
+                    <div class="alert alert-danger alert-dismissible mt-3" >
+                        <%=message %>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                <% } %>       
+              <% } %> 
+            
             <div class="row d-flex justify-content-center">
+             
                 <div class="col-lg-4 mt-5">
                     <div class="card">
                         <div class="card-body">
@@ -17,7 +36,31 @@
                                     class="text-danger" data-toggle="modal"
                                     data-target="#modalRegiterRecrutador">recrutador</a>.
                             </p>
-                            <!-- Modal -->
+                            
+                            
+                            
+                             <!-- Modal resultado cadastro -->
+                            <!-- <div class="modal fade" id="modalResult" tabindex="-1" role="dialog" 
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" class="close" data-dismiss="modal">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            
+                            <!-- Modal Form Recrutador -->
                             <div class="modal fade" id="modalRegiterRecrutador" tabindex="-1" role="dialog"
                                 aria-labelledby="TituloModalCentralizado" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -39,14 +82,16 @@
                                                         <!--Card content-->
                                                         <div class="card-body px-lg-5 pt-0">
                                                             <!-- Form -->
-                                                            <form class="text-center mt-3">
+                                                            <form class="text-center mt-3" method="POST"
+                                                                action="/users/signUpRecruiter">
                                                                 <div class="form-row">
                                                                     <div class="col">
                                                                         <!-- First name -->
                                                                         <div class="md-form">
                                                                             <input type="text"
                                                                                 id="materialRegisterFormFirstName"
-                                                                                class="form-control" placeholder="Pep">
+                                                                                class="form-control" placeholder="Pep"
+                                                                                name="r_fname">
                                                                             <label
                                                                                 for="materialRegisterFormFirstName">Nome
                                                                             </label>
@@ -58,7 +103,7 @@
                                                                             <input type="text"
                                                                                 id="materialRegisterFormLastName"
                                                                                 class="form-control"
-                                                                                placeholder="Guardiola">
+                                                                                placeholder="Guardiola" name="r_lname">
                                                                             <label
                                                                                 for="materialRegisterFormLastName">Sobrenome
                                                                             </label>
@@ -68,7 +113,7 @@
                                                                 <!-- Last name -->
                                                                 <div class="form-group mt-3">
                                                                     <select class="form-control"
-                                                                        id="exampleFormControlSelect1">
+                                                                        id="exampleFormControlSelect1" name="r_club">
                                                                         <option>Ajax</option>
                                                                         <option>Catandeiras de Heliópolis</option>
                                                                         <option>Dragões da Casa Verde</option>
@@ -83,7 +128,7 @@
                                                                 <div class="md-form mt-0">
                                                                     <input type="email" id="materialRegisterFormEmail"
                                                                         class="form-control"
-                                                                        placeholder="meuEmail@email.com">
+                                                                        placeholder="meuEmail@email.com" name="r_email">
                                                                     <label for="materialRegisterFormEmail"
                                                                         class="active">E-mail</label>
                                                                 </div>
@@ -92,7 +137,8 @@
                                                                     <input type="password"
                                                                         id="materialRegisterFormPassword"
                                                                         class="form-control"
-                                                                        aria-describedby="materialRegisterFormPasswordHelpBlock">
+                                                                        aria-describedby="materialRegisterFormPasswordHelpBlock"
+                                                                        name="r_password">
                                                                     <label for="materialRegisterFormPassword"
                                                                         class="active">Password</label>
                                                                     <small id="materialRegisterFormPasswordHelpBlock"
@@ -160,5 +206,8 @@
         </div>
         <%- include('./partials/footer.ejs') %>
     </main>
+
+    
 </body>
+
 </html>
